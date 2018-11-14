@@ -12,7 +12,8 @@
     "test": "jest",
     "lint": "tslint -p . --format stylish",
     "build": "tsc",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -20,6 +21,7 @@
     "@storybook/addon-knobs": "^4.0.6",
     "@storybook/addon-storysource": "^4.0.6",
     "@storybook/react": "^4.0.6",
+    "@storybook/storybook-deployer": "^2.3.0",
     "@types/storybook__addon-actions": "^3.4.1",
     "@types/storybook__addon-knobs": "^3.4.1",
     "@types/storybook__react": "^4.0.0",
@@ -88,5 +90,10 @@
   },
   "dependencies": {
     "@types/react": "^16.7.6"
+  },
+  "storybook-deployer": {
+    "gitUsername": "hipstersmoothie",
+    "gitEmail": "lisowski54@gmail.com",
+    "commitMessage": "Deploy Storybook [skip ci]"
   }
 }

@@ -1,0 +1,114 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/react-glider
+  docker:
+    - image: circleci/node:latest-browsers
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            # Find a cache corresponding to this specific package.json checksum
+            # when this file is changed, this key will fail
+            - react-glider-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+            - react-glider-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - react-glider-{{ .Branch }}
+            # Find the most recent cache used from any branch
+            - react-glider-master
+            - react-glider-
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          key: react-glider-{{ .Branch }}-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+          paths:
+            - node_modules
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-glider
+      - run:
+          name: Lint
+          command: yarn lint
+
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-glider
+      - run:
+          name: Test
+          command: yarn test
+
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-glider
+      - run:
+          name: Build
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  deploy-storybook:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-glider
+      - run:
+          name: Deploy Storybook to GH Pages
+          command: yarn deploy-storybook
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - install:
+          filters:
+            tags:
+              only: /.*/
+
+      - lint:
+          requires:
+            - install
+          filters:
+            tags:
+              only: /.*/
+
+      - test:
+          requires:
+            - install
+          filters:
+            tags:
+              only: /.*/
+
+      - build:
+          requires:
+            - install
+          filters:
+            tags:
+              only: /.*/
+
+      - deploy-storybook:
+          requires:
+            - build
+            - test
+            - lint
+          filters:
+            branches:
+              only:
+                - master
