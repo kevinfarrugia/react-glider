@@ -1,0 +1,24 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-xo/space"
+  ],
+  "rules": {
+    // React doc-gen comments
+    "no-single-line-block-comment": false,
+    // React default props dont get loaded into docgen
+    "no-redundant-jsdoc": false,
+    // I like when react render methods come last
+    "member-ordering": false,
+    // Allow double quote only in jsx
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape",
+      "jsx-double",
+      "avoid-template"
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+  integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+  crossorigin="anonymous"
+/>
+
+<style>
+  .glider-contain {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .glider {
+    margin: 0 auto;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overflow: -moz-scrollbars-none;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    transform: translateZ(0);
+  }
+  .glider-track {
+    transform: translateZ(0);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    z-index: 1;
+  }
+  .glider.draggable {
+    user-select: none;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+  .glider.draggable .glider-slide img {
+    user-select: none;
+    pointer-events: none;
+  }
+  .glider.drag {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+  .glider-slide {
+    user-select: none;
+    justify-content: center;
+    align-content: center;
+    background: #f5f5f5;
+    width: 100%;
+  }
+  .glider-slide img {
+    max-width: 100%;
+  }
+  .glider::-webkit-scrollbar {
+    opacity: 0;
+    height: 0;
+  }
+  .glider-prev,
+  .glider-next {
+    position: absolute;
+    width: 10px;
+    z-index: 2;
+    font-size: 40px;
+    text-decoration: none;
+    left: -42px;
+    border: 0;
+    top: 40%;
+    cursor: pointer;
+    color: #a89cc8;
+    opacity: 1;
+    line-height: 1;
+    transition: opacity 0.25s cubic-bezier(0.17, 0.67, 0.83, 0.67),
+      color 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  }
+  .glider-next {
+    right: -23px;
+    left: auto;
+  }
+  .glider-next.disabled,
+  .glider-prev.disabled {
+    opacity: 0.25;
+    color: #666;
+    cursor: default;
+  }
+  .glider-slide {
+    min-width: 150px;
+  }
+  .glider-hide {
+    opacity: 0;
+  }
+  .glider-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 15px;
+  }
+  .glider-dot {
+    user-select: none;
+    display: block;
+    cursor: pointer;
+    color: #ccc;
+    border-radius: 999px;
+    background: #ccc;
+    width: 12px;
+    height: 12px;
+    margin: 7px;
+  }
+  .glider-dot.active {
+    background: #a89cc8;
+  }
+  @media (max-width: 36em) {
+    .glider::-webkit-scrollbar {
+      opacity: 1;
+      -webkit-appearance: none;
+      width: 7px;
+      height: 3px;
+    }
+    .glider::-webkit-scrollbar-thumb {
+      opacity: 1;
+      border-radius: 99px;
+      background-color: rgba(156, 156, 156, 0.25);
+      -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
+    }
+  }
+</style>
+
+<style>
+  .glider {
+    dfdheight: 300px;
+  }
+  .glider-track {
+    height: 100%;
+  }
+  .gradient-outline {
+    border: 3px solid !important;
+    border-image: linear-gradient(to right, #8cc9f0, #efa8b0, #a89cc8) 5 !important;
+  }
+  .glider-slide {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f5f5f5;
+  }
+  .glider-slide h1 {
+    color: #8cc9f0;
+    font-weight: bold;
+  }
+  .glider-slide:nth-child(2n) h1 {
+    color: #a89cc8;
+  }
+  .glider-slide:nth-child(3n) h1 {
+    color: #efa8b0;
+  }
+</style>
+<style>
+  .glider-persp {
+    height: 236px;
+  }
+  .glider-persp .glider-track {
+    position: relative;
+    top: 36px;
+  }
+  .glider-persp .glider-slide {
+    margin: 7px 0;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transform: perspective(1500px) rotateY(0deg) scale(1) translateZ(0);
+    transform-origin: 0 0;
+    transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .glider-persp .glider-slide.right-3 {
+    -webkit-transform: perspective(1500px) rotateY(-50deg) scale(1.35)
+      translateZ(0);
+    -webkit-transform-origin: 100% 50% 0;
+    transform: perspective(1500px) rotateY(-50deg) scale(1.35) translateZ(0);
+    transform-origin: 0% 50% 0;
+    margin: 10px -8px;
+  }
+  .glider-persp .glider-slide.left-3 {
+    -webkit-transform: perspective(1500px) rotateY(50deg) scale(1.35)
+      translateZ(0);
+    -webkit-transform-origin: 100% 50% 0;
+    transform: perspective(1500px) rotateY(50deg) scale(1.35) translateZ(0);
+    transform-origin: 0% 50% 0;
+    margin: 10px 0;
+  }
+  .glider-persp .glider-slide.left-2 {
+    -webkit-transform: perspective(1500px) rotateY(50deg) scale(1.2)
+      translateZ(0);
+    -webkit-transform-origin: 100% 50% 0;
+    transform: perspective(1500px) rotateY(50deg) scale(1.2) translateZ(0);
+    transform-origin: 100% 50% 0;
+  }
+  .glider-persp .glider-slide.right-2 {
+    -webkit-transform: perspective(1500px) rotateY(-50deg) scale(1.2)
+      translateZ(0);
+    -webkit-transform-origin: 0 50% 0;
+    transform: perspective(1500px) rotateY(-50deg) scale(1.2) translateZ(0);
+    transform-origin: 0 50% 0;
+  }
+  .glider-persp .glider-slide.left-1 {
+    -webkit-transform: perspective(1200px) rotateY(34deg) scale(1.1)
+      translateZ(0);
+    -webkit-transform-origin: 100% 50% 0;
+    transform: perspective(1200px) rotateY(34deg) scale(1.1) translateZ(0);
+    transform-origin: 100% 50% 0;
+  }
+  .glider-persp .glider-slide.right-1 {
+    -webkit-transform: perspective(1200px) rotateY(-34deg) scale(1.1)
+      translateZ(0);
+    -webkit-transform-origin: 0 50% 0;
+    transform: perspective(1200px) rotateY(-34deg) scale(1.1) translateZ(0);
+    transform-origin: 0 50% 0;
+  }
+</style>

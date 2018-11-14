@@ -1,0 +1,92 @@
+{
+  "name": "react-glider",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "source": "index.ts",
+  "author": {
+    "name": "Andrew Lisowski",
+    "email": "lisowski54@gmail.com"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "tslint -p . --format stylish",
+    "build": "tsc",
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@storybook/addon-actions": "^4.0.6",
+    "@storybook/addon-knobs": "^4.0.6",
+    "@storybook/addon-storysource": "^4.0.6",
+    "@storybook/react": "^4.0.6",
+    "@types/storybook__addon-actions": "^3.4.1",
+    "@types/storybook__addon-knobs": "^3.4.1",
+    "@types/storybook__react": "^4.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "husky": "^1.1.4",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.0.4",
+    "prettier": "^1.15.2",
+    "react": "^16.6.3",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-dom": "^16.6.3",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "tslint-xo": "^0.10.0",
+    "typescript": "^3.1.6",
+    "typescript-tslint-plugin": "^0.0.6",
+    "webpack": "^4.25.1"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/*.d.ts",
+      "**/*.{ts,tsx}"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/*.test.+(ts|tsx|js)"
+    ],
+    "globals": {
+      "test-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
+  },
+  "dependencies": {
+    "@types/react": "^16.7.6"
+  }
+}
