@@ -70,6 +70,10 @@ jobs:
       - attach_workspace:
           at: ~/react-glider
       - run:
+          name: 'Make sure we can commit to github'
+          command: |
+            mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - run:
           name: Deploy Storybook to GH Pages
           command: yarn deploy-storybook
 
