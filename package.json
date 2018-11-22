@@ -1,18 +1,28 @@
 {
   "name": "react-glider",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "source": "index.ts",
+  "description": "A react wrapper for glider.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": {
     "name": "Andrew Lisowski",
     "email": "lisowski54@gmail.com"
+  },
+  "files": [
+    "dist",
+    "glider.defaults.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hipstersmoothie/react-glider"
   },
   "scripts": {
     "lint": "tslint -p . --format stylish",
     "build": "tsc",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "prerelease": "npm run build",
+    "release": "github-semantic-version --bump --changelog --push --publish"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -30,6 +40,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
+    "github-semantic-version": "^7.6.0",
     "husky": "^1.1.4",
     "jest": "^23.6.0",
     "lint-staged": "^8.0.4",
@@ -99,5 +110,11 @@
     "gitUsername": "hipstersmoothie",
     "gitEmail": "lisowski54@gmail.com",
     "commitMessage": "Deploy Storybook [skip ci]"
+  },
+  "gsv": {
+    "majorLabel": "Version: Major",
+    "minorLabel": "Version: Minor",
+    "patchLabel": "Version: Patch",
+    "internalLabel": "No version: Internal"
   }
 }

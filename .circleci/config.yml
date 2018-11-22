@@ -42,15 +42,6 @@ jobs:
           name: Lint
           command: yarn lint
 
-  test:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/react-glider
-      - run:
-          name: Test
-          command: yarn test
-
   build:
     <<: *defaults
     steps:
@@ -63,6 +54,17 @@ jobs:
           root: .
           paths:
             - .
+
+  release:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-glider
+      - run: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run:
+          name: Release
+          command: npm run release
 
   deploy-storybook:
     <<: *defaults
@@ -93,13 +95,6 @@ workflows:
             tags:
               only: /.*/
 
-      - test:
-          requires:
-            - install
-          filters:
-            tags:
-              only: /.*/
-
       - build:
           requires:
             - install
@@ -107,11 +102,18 @@ workflows:
             tags:
               only: /.*/
 
-      - deploy-storybook:
+      - release:
           requires:
             - build
-            - test
             - lint
+          filters:
+            branches:
+              only:
+                - master
+
+      - deploy-storybook:
+          requires:
+            - release
           filters:
             branches:
               only:
