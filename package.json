@@ -9,7 +9,6 @@
     "email": "lisowski54@gmail.com"
   },
   "scripts": {
-    "test": "jest",
     "lint": "tslint -p . --format stylish",
     "build": "tsc",
     "storybook": "start-storybook -p 9001 -c .storybook",
@@ -19,12 +18,14 @@
     "@babel/core": "^7.1.6",
     "@storybook/addon-actions": "^4.0.6",
     "@storybook/addon-knobs": "^4.0.6",
+    "@storybook/addon-notes": "^4.0.8",
     "@storybook/addon-storysource": "^4.0.6",
     "@storybook/react": "^4.0.6",
     "@storybook/storybook-deployer": "^2.3.0",
     "@types/jest": "^23.3.9",
     "@types/storybook__addon-actions": "^3.4.1",
     "@types/storybook__addon-knobs": "^3.4.1",
+    "@types/storybook__addon-notes": "^3.3.3",
     "@types/storybook__react": "^4.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
@@ -91,7 +92,8 @@
     ]
   },
   "dependencies": {
-    "@types/react": "^16.7.6"
+    "@types/react": "^16.7.6",
+    "glider-js": "^1.6.0"
   },
   "storybook-deployer": {
     "gitUsername": "hipstersmoothie",

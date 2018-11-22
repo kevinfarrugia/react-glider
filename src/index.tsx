@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // tslint:disable-next-line
-import './glider';
+import * as Glider from 'glider-js';
 
 interface IBreakPoint {
   breakpoint: number;
@@ -213,18 +213,18 @@ export default class GliderComponent extends React.Component<IGliderProps> {
     return (
       <div className="glider-contain">
         {this.props.hasArrows && (
-          <a className="glider-prev" id="glider-prev">
+          <button role="button" className="glider-prev" id="glider-prev">
             {this.props.iconLeft || '«'}
-          </a>
+          </button>
         )}
         <div className={this.props.className} ref={this.ref}>
           {this.props.children}
         </div>
         {this.props.hasDots && <div id="dots" className="glider-dots" />}
         {this.props.hasArrows && (
-          <a className="glider-next" id="glider-next">
+          <button role="button" className="glider-next" id="glider-next">
             {this.props.iconRight || '»'}
-          </a>
+          </button>
         )}
       </div>
     );

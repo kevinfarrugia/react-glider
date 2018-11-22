@@ -2,6 +2,7 @@ import * as React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 
+import '../glider.defaults.css';
 import Glider from '../src';
 
 const styles = {
@@ -162,53 +163,60 @@ storiesOf('Glider', module)
       <Pane>12</Pane>
     </Glider>
   ))
-  .add('Perspective View', () => (
-    <Glider
-      draggable
-      hasArrows
-      hasDots
-      slidesToShow={5}
-      slidesToScroll={1}
-      className="glider-persp"
-    >
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        1
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        2
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        3
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        4
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        5
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        6
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        7
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        8
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        9
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        10
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        11
-      </Pane>
-      <Pane className="gradient-outline" style={{ margin: 10 }}>
-        12
-      </Pane>
-    </Glider>
-  ))
+  .add(
+    'Perspective View',
+    () => (
+      <Glider
+        draggable
+        hasArrows
+        hasDots
+        slidesToShow={5}
+        slidesToScroll={1}
+        className="glider-persp"
+      >
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          1
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          2
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          3
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          4
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          5
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          6
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          7
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          8
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          9
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          10
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          11
+        </Pane>
+        <Pane className="gradient-outline" style={{ margin: 10 }}>
+          12
+        </Pane>
+      </Glider>
+    ),
+    {
+      notes:
+        'The CSS for this is not included in glider.js or this package. You can find it in .storybook/preview-head.html in the style tag. Please do not file bugs as I do not want to support this.'
+    }
+  )
   .add('Scroll to specific slides or pages', () => (
     <Glider
       draggable
