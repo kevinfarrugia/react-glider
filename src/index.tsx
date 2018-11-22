@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // tslint:disable-next-line
-import * as Glider from 'glider-js';
+import 'glider-js';
 
 interface IBreakPoint {
   breakpoint: number;
