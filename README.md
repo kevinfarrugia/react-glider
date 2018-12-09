@@ -16,13 +16,13 @@ yarn storybook
 To use the CSS for glider.js in your app either include the css in your head.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/glider-js@1.6.0/glider.css" />
+<link rel="stylesheet" href="https://unpkg.com/glider-js@1.6.0/glider.min.css" />
 ```
 
 or just include it in your project if it is set up for that.
 
 ```js
-import Glider from 'glider-js';
+import 'glider-js/glider.min.css';
 ```
 
 ### Demo Defaults
@@ -30,7 +30,7 @@ import Glider from 'glider-js';
 This package also exposes the CSS used to render the demo.
 
 ```js
-import Glider from 'react-glider/glider.min.css';
+import Glider from 'react-glider/glider.default.css';
 ```
 
 ### Perspective View
