@@ -30,7 +30,7 @@ import 'glider-js/glider.min.css';
 This package also exposes the CSS used to render the demo.
 
 ```js
-import Glider from 'react-glider/glider.default.css';
+import Glider from 'react-glider/glider.defaults.css';
 ```
 
 ### Perspective View
