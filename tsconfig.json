@@ -9,6 +9,7 @@
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "rootDirs": ["src", "stories"],
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
