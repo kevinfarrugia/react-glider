@@ -27,7 +27,7 @@ interface IGliderProps {
   /**
    * The number of slides to show in container
    * If this value is set to auto, it will be
-   * automatially calcuated based upon the number
+   * automatically calculated based upon the number
    * of items able to fit within the container viewport.
    * This requires setting the itemWidth option.
    *
@@ -141,11 +141,21 @@ export default class GliderComponent extends React.Component<IGliderProps> {
       ...nextProps,
       arrows: nextProps.hasArrows
         ? {
-            next: '.glider-next',
-            prev: '.glider-prev'
+            next:
+              nextProps.arrows && nextProps.arrows.next
+                ? nextProps.arrows.next
+                : '.glider-next',
+            prev:
+              nextProps.arrows && nextProps.arrows.prev
+                ? nextProps.arrows.prev
+                : '.glider-prev'
           }
         : undefined,
-      dots: nextProps.hasDots ? '#dots' : undefined
+      dots: nextProps.hasDots
+        ? nextProps.dots
+          ? nextProps.dots
+          : '#dots'
+        : undefined
     });
 
     this.glider.refresh(true);
@@ -161,11 +171,21 @@ export default class GliderComponent extends React.Component<IGliderProps> {
       ...this.props,
       arrows: this.props.hasArrows
         ? {
-            next: '.glider-next',
-            prev: '.glider-prev'
+            next:
+              this.props.arrows && this.props.arrows.next
+                ? this.props.arrows.next
+                : '.glider-next',
+            prev:
+              this.props.arrows && this.props.arrows.prev
+                ? this.props.arrows.prev
+                : '.glider-prev'
           }
         : undefined,
-      dots: this.props.hasDots ? '#dots' : undefined
+      dots: this.props.hasDots
+        ? this.props.dots
+          ? this.props.dots
+          : '#dots'
+        : undefined
     });
     const addEventListener = (event: string, fn: any) => {
       if (typeof fn === 'function' && this.ref.current) {
@@ -213,7 +233,7 @@ export default class GliderComponent extends React.Component<IGliderProps> {
 
     return (
       <div className="glider-contain">
-        {this.props.hasArrows && (
+        {this.props.hasArrows && !this.props.arrows && (
           <button role="button" className="glider-prev" id="glider-prev">
             {this.props.iconLeft || '«'}
           </button>
@@ -221,8 +241,10 @@ export default class GliderComponent extends React.Component<IGliderProps> {
         <div className={this.props.className} ref={this.ref}>
           {this.props.children}
         </div>
-        {this.props.hasDots && <div id="dots" className="glider-dots" />}
-        {this.props.hasArrows && (
+        {this.props.hasDots && !this.props.dots && (
+          <div id="dots" className="glider-dots" />
+        )}
+        {this.props.hasArrows && !this.props.arrows && (
           <button role="button" className="glider-next" id="glider-next">
             {this.props.iconRight || '»'}
           </button>
