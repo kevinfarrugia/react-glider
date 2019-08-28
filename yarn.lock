@@ -5412,10 +5412,10 @@ gitlog@^3.1.2:
     debug "^3.1.0"
     lodash.assign "^4.2.0"
 
-glider-js@1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/glider-js/-/glider-js-1.6.3.tgz#38525c7a5a6a4548803f57429a342bd055d3acf0"
-  integrity sha512-0jQitz+/4R0/LxjlkkyOgvulEhdhaQXF79PTr/fx574xVuo4BKsXKOvV2r+Te11EefEWU/wwt3SNmFwNVwY62Q==
+glider-js@1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/glider-js/-/glider-js-1.6.6.tgz#28c2592b52847507f1a92056b165baf30bc2f2a3"
+  integrity sha512-P1zzyjsrm/xNw6avk4ZKuQXNcDESQuy2OjDy89AF4Ln1LCMOSHlJGP3OkYIAIAxQl7YX4JO/XdEEsz9O7Eh6gA==
 
 glob-base@^0.3.0:
   version "0.3.0"
