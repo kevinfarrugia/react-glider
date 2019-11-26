@@ -135,25 +135,26 @@ export default class GliderComponent extends React.Component<IGliderProps> {
     this.ref = React.createRef();
   }
 
-  public componentWillUpdate(nextProps: IGliderProps) {
+  public componentDidUpdate() {
+    const updatedProps: IGliderProps = this.props;
     // @ts-ignore
     this.glider.setOption({
-      ...nextProps,
-      arrows: nextProps.hasArrows
+      ...updatedProps,
+      arrows: updatedProps.hasArrows
         ? {
             next:
-              nextProps.arrows && nextProps.arrows.next
-                ? nextProps.arrows.next
+              updatedProps.arrows && updatedProps.arrows.next
+                ? updatedProps.arrows.next
                 : '.glider-next',
             prev:
-              nextProps.arrows && nextProps.arrows.prev
-                ? nextProps.arrows.prev
+              updatedProps.arrows && updatedProps.arrows.prev
+                ? updatedProps.arrows.prev
                 : '.glider-prev'
           }
         : undefined,
-      dots: nextProps.hasDots
-        ? nextProps.dots
-          ? nextProps.dots
+      dots: updatedProps.hasDots
+        ? updatedProps.dots
+          ? updatedProps.dots
           : '#dots'
         : undefined
     });
