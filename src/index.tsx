@@ -219,6 +219,10 @@ export default class GliderComponent extends React.Component<IGliderProps> {
     removeEventListener('glider-add', this.props.onAdd);
     removeEventListener('glider-destroy', this.props.onDestroy);
     removeEventListener('glider-slide-hidden', this.props.onSlideHidden);
+
+    if (this.glider) {
+      this.glider.destroy();
+    }
   }
 
   private positionGlider() {
