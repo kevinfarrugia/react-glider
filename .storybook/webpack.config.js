@@ -1,6 +1,6 @@
 const TSDocgenPlugin = require('react-docgen-typescript-webpack-plugin');
 
-module.exports = (baseConfig, env, config) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     loader: [
@@ -10,11 +10,11 @@ module.exports = (baseConfig, env, config) => {
         options: {
           parser: 'typescript',
           prettierConfig: {
-            singleQuote: false
-          }
-        }
-      }
-    ]
+            singleQuote: false,
+          },
+        },
+      },
+    ],
   });
   config.plugins.push(new TSDocgenPlugin()); // optional
   config.resolve.extensions.push('.ts', '.tsx');

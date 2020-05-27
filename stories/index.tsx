@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
+import { storiesOf, DecoratorFn } from '@storybook/react';
 import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 
 import '../glider.defaults.css';
-import Glider from '../src';
+import Glider, { GliderMethods } from '../src';
 
 const styles = {
   width: '80%',
@@ -14,7 +14,7 @@ const Wrapper = ({ children, style }: any) => (
   <div style={style || styles}>{children}</div>
 );
 
-const createDummyPage = (style?: object): StoryDecorator => storyFn => {
+const createDummyPage = (style?: object): DecoratorFn => storyFn => {
   if (process.env.NODE_ENV === 'test') {
     return <div>{storyFn()}</div>;
   }
@@ -41,7 +41,7 @@ storiesOf('Glider', module)
     <Glider
       draggable={boolean('draggable', false)}
       dragVelocity={number('dragVelocity', 3.3)}
-      eventPropagate={boolean('eventPropagate', true)}
+      propagateEvent={boolean('propagateEvent', true)}
       scrollLock={boolean('scrollLock', false)}
       scrollLockDelay={number('scrollLockDelay', 250)}
       scrollPropagate={boolean('scrollPropagate', false)}
@@ -241,4 +241,37 @@ storiesOf('Glider', module)
       <Pane>11</Pane>
       <Pane>12</Pane>
     </Glider>
-  ));
+  ))
+  .add('Ref Exposes Glider Methods', () => {
+    const gliderRef = React.useRef<GliderMethods>();
+
+    return (
+      <>
+        <button onClick={() => gliderRef.current.destroy()}>Destroy!</button>
+        <Glider
+          draggable
+          hasArrows
+          hasDots
+          slidesToShow={5.5}
+          slidesToScroll={1}
+          ref={gliderRef}
+          scrollToSlide={number('scrollToSlide', 5)}
+          scrollToPage={number('scrollToPage', 0)}
+          className="gradient-outline"
+        >
+          <Pane>1</Pane>
+          <Pane>2</Pane>
+          <Pane>3</Pane>
+          <Pane>4</Pane>
+          <Pane>5</Pane>
+          <Pane>6</Pane>
+          <Pane>7</Pane>
+          <Pane>8</Pane>
+          <Pane>9</Pane>
+          <Pane>10</Pane>
+          <Pane>11</Pane>
+          <Pane>12</Pane>
+        </Glider>
+      </>
+    );
+  });
