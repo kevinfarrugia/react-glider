@@ -1,3 +1,23 @@
+# v2.0.0 (Wed May 27 2020)
+
+#### 💥 Breaking Change
+
+- expose Glider instance ref + add missing Glider.js options + rename eventPropagate to propagateEvent [#22](https://github.com/hipstersmoothie/react-glider/pull/22) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### 🐛 Bug Fix
+
+- Feature/#10 export types [#13](https://github.com/hipstersmoothie/react-glider/pull/13) (matteo.pieroni@zonedigital.com)
+- fix: Destroy glider on unmount [#18](https://github.com/hipstersmoothie/react-glider/pull/18) ([@stanislavvasilyev-sravni](https://github.com/stanislavvasilyev-sravni) [@VStas](https://github.com/VStas))
+
+#### Authors: 4
+
+- [@stanislavvasilyev-sravni](https://github.com/stanislavvasilyev-sravni)
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+- Matteo Pieroni ([@MatteoPieroni](https://github.com/MatteoPieroni))
+- Stanislav Vasilev ([@VStas](https://github.com/VStas))
+
+---
+
 # 1.1.5 (Tue Nov 26 2019)
 
 
