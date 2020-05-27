@@ -16,7 +16,10 @@ yarn storybook
 To use the CSS for glider.js in your app either include the css in your head.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/glider-js@1.6.0/glider.min.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/glider-js@1.6.0/glider.min.css"
+/>
 ```
 
 or just include it in your project if it is set up for that.
@@ -36,3 +39,31 @@ import Glider from 'react-glider/glider.defaults.css';
 ### Perspective View
 
 The CSS for the perspective view is not included in `glider.js` or this package. You can find it in `.storybook/preview-head.html` in the `style` tag. Please do not file bugs for it as I do not want to support it.
+
+## Usage
+
+### Glider Methods
+
+To get access to the current glider instance this react component exposes a ref.
+
+```js
+import React from 'react';
+import Glider, {GliderMethods} from 'react-glider'
+
+const example = () => {
+  const gliderRef = React.useRef<GliderMethods>();
+
+  return (
+    <>
+      <button onClick={() => gliderRef.current.destroy()}>Destroy!</button>
+
+      <Glider ref={gliderRef}>
+        <Pane>1</Pane>
+        <Pane>2</Pane>
+        <Pane>3</Pane>
+        <Pane>4</Pane>
+      </Glider>
+    </>
+  );
+}
+```
