@@ -167,23 +167,22 @@ type GliderOptions = Pick<
   | 'skipTrack'
 >;
 
-export type GliderMethods = {
-  destroy: () => void;
-  updateControls: () => void;
-  refresh: (rebuildPaging?: boolean) => void;
-  setOption: (options: GliderOptions, global?: boolean) => void;
-  scrollTo: (pixelOffset: number) => void;
-  scrollItem: (slideIndex: number, isActuallyDotIndex?: boolean) => void;
-};
+export interface GliderMethods {
+  destroy(): void;
+  updateControls(): void;
+  refresh(rebuildPaging?: boolean): void;
+  setOption(options: GliderOptions, global?: boolean): void;
+  scrollTo(pixelOffset: number): void;
+  scrollItem(slideIndex: number, isActuallyDotIndex?: boolean): void;
+}
 
 const GliderComponent = React.forwardRef(
   (props: GliderProps, ref: React.Ref<GliderMethods>) => {
     const innerRef = React.useRef<HTMLDivElement>(null);
-    const gliderRef = React.useRef<GliderMethods>(null);
+    const gliderRef = React.useRef<GliderMethods>();
 
     const makeGliderOptions = () => ({
       ...props,
-      dots: (props.hasDots && props.dots && props.dots) || '#dots' || undefined,
       arrows:
         (props.hasArrows && {
           next:
@@ -191,9 +190,10 @@ const GliderComponent = React.forwardRef(
             '.glider-next',
           prev:
             (props.arrows && props.arrows.prev && props.arrows.prev) ||
-            '.glider-prev'
+            '.glider-prev',
         }) ||
-        undefined
+        undefined,
+      dots: (props.hasDots && props.dots && props.dots) || '#dots' || undefined,
     });
 
     // On mount initialize the glider and hook up events
@@ -203,7 +203,11 @@ const GliderComponent = React.forwardRef(
       }
 
       // @ts-ignore
-      gliderRef.current = new Glider(innerRef.current, makeGliderOptions());
+      const glider = new Glider(
+        innerRef.current,
+        makeGliderOptions()
+      ) as GliderMethods;
+      gliderRef.current = glider;
 
       const addEventListener = (event: string, fn: any) => {
         if (typeof fn === 'function' && innerRef.current) {
@@ -221,9 +225,9 @@ const GliderComponent = React.forwardRef(
       addEventListener('glider-slide-hidden', props.onSlideHidden);
 
       if (props.scrollToSlide) {
-        gliderRef.current!.scrollItem(props.scrollToSlide - 1);
+        glider.scrollItem(props.scrollToSlide - 1);
       } else if (props.scrollToPage) {
-        gliderRef.current!.scrollItem(props.scrollToPage - 1, true);
+        glider.scrollItem(props.scrollToPage - 1, true);
       }
 
       return () => {
@@ -249,20 +253,17 @@ const GliderComponent = React.forwardRef(
     }, []);
 
     // When the props update, update the glider
-    React.useEffect(
-      () => {
-        if (!gliderRef.current) {
-          return;
-        }
+    React.useEffect(() => {
+      if (!gliderRef.current) {
+        return;
+      }
 
-        gliderRef.current.setOption(makeGliderOptions());
-        gliderRef.current.refresh(true);
-      },
-      [props]
-    );
+      gliderRef.current.setOption(makeGliderOptions());
+      gliderRef.current.refresh(true);
+    }, [props]);
 
     // Expose the glider instance to the user so they can call the methods too
-    React.useImperativeHandle(ref, () => gliderRef.current!);
+    React.useImperativeHandle(ref, () => gliderRef.current as GliderMethods);
 
     return (
       <div className="glider-contain">

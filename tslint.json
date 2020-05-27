@@ -6,6 +6,8 @@
     "tslint-xo/space"
   ],
   "rules": {
+    "interface-name": false,
+    "variable-name": false,
     // React doc-gen comments
     "no-single-line-block-comment": false,
     // React default props dont get loaded into docgen
