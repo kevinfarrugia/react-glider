@@ -258,7 +258,7 @@ const GliderComponent = React.forwardRef(
         return;
       }
 
-      gliderRef.current.setOption(makeGliderOptions());
+      gliderRef.current.setOption(makeGliderOptions(), true);
       gliderRef.current.refresh(true);
     }, [props]);
 
