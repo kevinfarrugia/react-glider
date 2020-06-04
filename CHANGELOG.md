@@ -1,3 +1,15 @@
+# v2.0.1 (Thu Jun 04 2020)
+
+#### 🐛 Bug Fix
+
+- fix issue #24 [#25](https://github.com/hipstersmoothie/react-glider/pull/25) ([@vinkodlak](https://github.com/vinkodlak))
+
+#### Authors: 1
+
+- [@vinkodlak](https://github.com/vinkodlak)
+
+---
+
 # v2.0.0 (Wed May 27 2020)
 
 #### 💥 Breaking Change
