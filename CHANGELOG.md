@@ -1,3 +1,15 @@
+# v2.0.2 (Tue Oct 06 2020)
+
+#### 🐛 Bug Fix
+
+- fix: refresh event not firing [#29](https://github.com/hipstersmoothie/react-glider/pull/29) ([@zeelMT](https://github.com/zeelMT))
+
+#### Authors: 1
+
+- [@zeelMT](https://github.com/zeelMT)
+
+---
+
 # v2.0.1 (Thu Jun 04 2020)
 
 #### 🐛 Bug Fix
