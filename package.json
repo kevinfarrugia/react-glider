@@ -101,7 +101,7 @@
     ]
   },
   "dependencies": {
-    "glider-js": "1.6.6"
+    "glider-js": "1.7.1"
   },
   "storybook-deployer": {
     "gitUsername": "hipstersmoothie",
