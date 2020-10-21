@@ -1,3 +1,15 @@
+# v2.0.3 (Wed Oct 21 2020)
+
+#### 🐛 Bug Fix
+
+- Check if component is mounted to avoid refresh on mount [#34](https://github.com/hipstersmoothie/react-glider/pull/34) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v2.0.2 (Tue Oct 06 2020)
 
 #### 🐛 Bug Fix
