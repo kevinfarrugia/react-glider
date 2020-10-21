@@ -180,6 +180,7 @@ const GliderComponent = React.forwardRef(
   (props: GliderProps, ref: React.Ref<GliderMethods>) => {
     const innerRef = React.useRef<HTMLDivElement>(null);
     const gliderRef = React.useRef<GliderMethods>();
+    const isMountedRef = React.useRef<boolean>(false);
 
     const makeGliderOptions = () => ({
       ...props,
@@ -193,7 +194,7 @@ const GliderComponent = React.forwardRef(
             '.glider-prev',
         }) ||
         undefined,
-      dots: (props.hasDots && props.dots && props.dots) || '#dots' || undefined,
+      dots: (props.hasDots && props.dots) || '#dots' || undefined,
     });
 
     // On mount initialize the glider and hook up events
@@ -229,6 +230,10 @@ const GliderComponent = React.forwardRef(
       } else if (props.scrollToPage) {
         glider.scrollItem(props.scrollToPage - 1, true);
       }
+    }, []);
+
+    React.useEffect(() => {
+      isMountedRef.current = true;
 
       return () => {
         const removeEventListener = (event: string, fn: any) => {
@@ -251,10 +256,9 @@ const GliderComponent = React.forwardRef(
         }
       };
     }, []);
-
     // When the props update, update the glider
     React.useEffect(() => {
-      if (!gliderRef.current) {
+      if (!(gliderRef.current && isMountedRef.current)) {
         return;
       }
 
@@ -277,9 +281,7 @@ const GliderComponent = React.forwardRef(
           {props.children}
         </div>
 
-        {props.hasDots && !props.dots && (
-          <div id="dots" className="glider-dots" />
-        )}
+        {props.hasDots && !props.dots && <div id="dots" />}
 
         {props.hasArrows && !props.arrows && (
           <button role="button" className="glider-next" id="glider-next">
