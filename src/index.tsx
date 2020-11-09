@@ -8,8 +8,8 @@ export interface BreakPoint {
   settings: {
     slidesToShow: number | 'auto';
     slidesToScroll: number | 'auto';
-    itemWidth: number;
-    duration: number;
+    itemWidth?: number;
+    duration?: number;
   };
 }
 
