@@ -1,3 +1,20 @@
+# v2.0.4 (Mon Nov 09 2020)
+
+#### 🐛 Bug Fix
+
+- fix(responsive-glider): allow for undefined breakpoint settings [#40](https://github.com/hipstersmoothie/react-glider/pull/40) ([@hotscotch92](https://github.com/hotscotch92))
+
+#### 📝 Documentation
+
+- Update README.md [#35](https://github.com/hipstersmoothie/react-glider/pull/35) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 2
+
+- [@hotscotch92](https://github.com/hotscotch92)
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v2.0.3 (Wed Oct 21 2020)
 
 #### 🐛 Bug Fix
