@@ -81,6 +81,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://bitnoi.se/"><img src="https://avatars1.githubusercontent.com/u/156628?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adam Misiorny</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=adam187" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/zeelMT"><img src="https://avatars1.githubusercontent.com/u/35482746?v=4?s=100" width="100px;" alt=""/><br /><sub><b>zeelMT</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=zeelMT" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vinkodlak"><img src="https://avatars2.githubusercontent.com/u/24816470?v=4?s=100" width="100px;" alt=""/><br /><sub><b>vinkodlak</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=vinkodlak" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/stanislavvasilyev-sravni"><img src="https://avatars2.githubusercontent.com/u/60090959?v=4?s=100" width="100px;" alt=""/><br /><sub><b>stanislavvasilyev-sravni</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=stanislavvasilyev-sravni" title="Code">💻</a></td>
   </tr>
 </table>
 
