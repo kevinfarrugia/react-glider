@@ -22,6 +22,15 @@
         "infra",
         "maintenance"
       ]
+    },
+    {
+      "login": "adam187",
+      "name": "Adam Misiorny",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/156628?v=4",
+      "profile": "http://bitnoi.se/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
