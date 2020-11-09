@@ -34,7 +34,8 @@
     "@storybook/storybook-deployer": "2.8.1",
     "@types/jest": "23.3.11",
     "@types/lodash.times": "^4.3.4",
-    "auto": "^9.36.2",
+    "auto": "^10.3.0",
+    "auto-config-hipstersmoothie": "^4.0.0",
     "awesome-typescript-loader": "5.2.1",
     "babel-core": "6.26.3",
     "babel-loader": "8.0.4",
@@ -107,5 +108,8 @@
     "gitUsername": "hipstersmoothie",
     "gitEmail": "lisowski54@gmail.com",
     "commitMessage": "Deploy Storybook [skip ci]"
+  },
+  "auto": {
+    "extends": "hipstersmoothie"
   }
 }
