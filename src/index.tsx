@@ -279,7 +279,12 @@ const GliderComponent = React.forwardRef(
     return (
       <Element className="glider-contain">
         {props.hasArrows && !props.arrows && (
-          <button role="button" className="glider-prev" id="glider-prev">
+          <button
+            type="button"
+            className="glider-prev"
+            aria-label="Previous"
+            id="glider-prev"
+          >
             {props.iconLeft || '«'}
           </button>
         )}
@@ -291,7 +296,12 @@ const GliderComponent = React.forwardRef(
         {props.hasDots && !props.dots && <div id="dots" />}
 
         {props.hasArrows && !props.arrows && (
-          <button role="button" className="glider-next" id="glider-next">
+          <button
+            type="button"
+            className="glider-next"
+            aria-label="Next"
+            id="glider-next"
+          >
             {props.iconRight || '»'}
           </button>
         )}
