@@ -48,24 +48,30 @@ To get access to the current glider instance this react component exposes a ref.
 
 ```js
 import React from 'react';
-import Glider, {GliderMethods} from 'react-glider'
+import Glider, { GliderMethods } from 'react-glider';
+
+const PaneExample: React.FC<PaneProps> = ({ children, style, className }) => (
+  <div className={`glider-slide ${className}`} style={style}>
+    <h1>{children}</h1>
+  </div>
+);
 
 const example = () => {
-  const gliderRef = React.useRef<GliderMethods>();
+  const gliderRef = React.useRef < GliderMethods > null;
 
   return (
     <>
-      <button onClick={() => gliderRef.current.destroy()}>Destroy!</button>
+      <button onClick={() => gliderRef.current?.destroy()}>Destroy!</button>
 
       <Glider ref={gliderRef}>
-        <Pane>1</Pane>
-        <Pane>2</Pane>
-        <Pane>3</Pane>
-        <Pane>4</Pane>
+        <PaneExample>1</PaneExample>
+        <PaneExample>2</PaneExample>
+        <PaneExample>3</PaneExample>
+        <PaneExample>4</PaneExample>
       </Glider>
     </>
   );
-}
+};
 ```
 
 ## Contributors ✨
