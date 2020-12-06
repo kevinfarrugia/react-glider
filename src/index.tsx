@@ -126,6 +126,11 @@ export interface GliderProps {
    */
   responsive?: BreakPoint[];
 
+  /**
+   * Replace container html element
+   */
+  containerElement?: React.ElementType;
+
   /** use any custom easing function, compatible with most easing plugins */
   easing?(x: number, t: number, b: number, c: number, d: number): number;
 
@@ -269,8 +274,10 @@ const GliderComponent = React.forwardRef(
     // Expose the glider instance to the user so they can call the methods too
     React.useImperativeHandle(ref, () => gliderRef.current as GliderMethods);
 
+    const Element = props.containerElement || 'div';
+
     return (
-      <div className="glider-contain">
+      <Element className="glider-contain">
         {props.hasArrows && !props.arrows && (
           <button role="button" className="glider-prev" id="glider-prev">
             {props.iconLeft || '«'}
@@ -288,7 +295,7 @@ const GliderComponent = React.forwardRef(
             {props.iconRight || '»'}
           </button>
         )}
-      </div>
+      </Element>
     );
   }
 );
