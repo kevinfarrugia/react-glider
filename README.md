@@ -46,7 +46,7 @@ The CSS for the perspective view is not included in `glider.js` or this package.
 
 To get access to the current glider instance this react component exposes a ref.
 
-```js
+```ts
 import React from 'react';
 import Glider, { GliderMethods } from 'react-glider';
 
@@ -57,7 +57,7 @@ const PaneExample: React.FC<PaneProps> = ({ children, style, className }) => (
 );
 
 const example = () => {
-  const gliderRef = React.useRef < GliderMethods > null;
+  const gliderRef = React.useRef<GliderMethods>(null);
 
   return (
     <>
