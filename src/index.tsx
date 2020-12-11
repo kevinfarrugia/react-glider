@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useId } from '@reach/auto-id';
 
 // tslint:disable-next-line
 import 'glider-js';
@@ -186,6 +187,10 @@ const GliderComponent = React.forwardRef(
     const innerRef = React.useRef<HTMLDivElement>(null);
     const gliderRef = React.useRef<GliderMethods>();
     const isMountedRef = React.useRef<boolean>(false);
+    const autoId = useId();
+    const nextBtnId = `glider-next-${autoId}`;
+    const prevBtnId = `glider-prev-${autoId}`;
+    const dotsId = `dots-${autoId}`;
 
     const makeGliderOptions = () => ({
       ...props,
@@ -193,13 +198,13 @@ const GliderComponent = React.forwardRef(
         (props.hasArrows && {
           next:
             (props.arrows && props.arrows.next && props.arrows.next) ||
-            '.glider-next',
+            `#${nextBtnId}`,
           prev:
             (props.arrows && props.arrows.prev && props.arrows.prev) ||
-            '.glider-prev',
+            `#${prevBtnId}`,
         }) ||
         undefined,
-      dots: (props.hasDots && props.dots) || '#dots' || undefined,
+      dots: (props.hasDots && props.dots) || `#${dotsId}` || undefined,
     });
 
     // On mount initialize the glider and hook up events
@@ -283,7 +288,7 @@ const GliderComponent = React.forwardRef(
             type="button"
             className="glider-prev"
             aria-label="Previous"
-            id="glider-prev"
+            id={prevBtnId}
           >
             {props.iconLeft || '«'}
           </button>
@@ -293,14 +298,14 @@ const GliderComponent = React.forwardRef(
           {props.children}
         </div>
 
-        {props.hasDots && !props.dots && <div id="dots" />}
+        {props.hasDots && !props.dots && <div id={dotsId} />}
 
         {props.hasArrows && !props.arrows && (
           <button
             type="button"
             className="glider-next"
             aria-label="Next"
-            id="glider-next"
+            id={nextBtnId}
           >
             {props.iconRight || '»'}
           </button>

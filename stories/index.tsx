@@ -7,14 +7,14 @@ import Glider, { GliderMethods } from '../src';
 
 const styles = {
   width: '80%',
-  margin: 'auto'
+  margin: 'auto',
 };
 
 const Wrapper = ({ children, style }: any) => (
   <div style={style || styles}>{children}</div>
 );
 
-const createDummyPage = (style?: object): DecoratorFn => storyFn => {
+const createDummyPage = (style?: object): DecoratorFn => (storyFn) => {
   if (process.env.NODE_ENV === 'test') {
     return <div>{storyFn()}</div>;
   }
@@ -121,9 +121,9 @@ storiesOf('Glider', module)
             slidesToShow: 'auto',
             slidesToScroll: 'auto',
             itemWidth: 150,
-            duration: 0.25
-          }
-        }
+            duration: 0.25,
+          },
+        },
       ]}
     >
       <Pane>1</Pane>
@@ -214,7 +214,7 @@ storiesOf('Glider', module)
     ),
     {
       notes:
-        'The CSS for this is not included in glider.js or this package. You can find it in .storybook/preview-head.html in the style tag. Please do not file bugs as I do not want to support this.'
+        'The CSS for this is not included in glider.js or this package. You can find it in .storybook/preview-head.html in the style tag. Please do not file bugs as I do not want to support this.',
     }
   )
   .add('Scroll to specific slides or pages', () => (
