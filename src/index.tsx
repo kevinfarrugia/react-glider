@@ -53,7 +53,7 @@ export interface GliderProps {
   /**
    * If true, Glider.js will lock to the nearest slide on resizing of the window
    */
-  resizeLock?: number;
+  resizeLock?: boolean;
   /**
    * If true, Glider.js will scroll to the beginning/end when its respective endpoint is reached
    */
