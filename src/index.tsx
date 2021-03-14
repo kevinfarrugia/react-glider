@@ -179,7 +179,7 @@ export interface GliderMethods {
   refresh(rebuildPaging?: boolean): void;
   setOption(options: GliderOptions, global?: boolean): void;
   scrollTo(pixelOffset: number): void;
-  scrollItem(slideIndex: number, isActuallyDotIndex?: boolean): void;
+  scrollItem(slideIndex: string | number, isActuallyDotIndex?: boolean): void;
 }
 
 const GliderComponent = React.forwardRef(
