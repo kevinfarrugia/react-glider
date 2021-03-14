@@ -76,6 +76,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "mshaaban0",
+      "name": "Moe Shaaban",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6163988?v=4",
+      "profile": "http://mshaaban.com/",
+      "contributions": [
+        "doc",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

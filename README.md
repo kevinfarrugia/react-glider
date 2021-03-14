@@ -91,6 +91,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://imkev.dev/"><img src="https://avatars1.githubusercontent.com/u/8075326?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kevin Farrugia</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=kevinfarrugia" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/hotscotch92"><img src="https://avatars1.githubusercontent.com/u/47922069?v=4?s=100" width="100px;" alt=""/><br /><sub><b>hotscotch92</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=hotscotch92" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="http://mshaaban.com/"><img src="https://avatars.githubusercontent.com/u/6163988?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Moe Shaaban</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=mshaaban0" title="Documentation">📖</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=mshaaban0" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
