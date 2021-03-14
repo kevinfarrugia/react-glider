@@ -7,6 +7,8 @@
   ],
   "rules": {
     "interface-name": false,
+    "ordered-imports": false,
+    "object-curly-spacing": false,
     "variable-name": false,
     // React doc-gen comments
     "no-single-line-block-comment": false,
