@@ -1,3 +1,41 @@
+# v2.1.0 (Sun Mar 14 2021)
+
+:tada: This release contains work from new contributors! :tada:
+
+Thanks for all your work!
+
+:heart: David Richolm ([@dricholm](https://github.com/dricholm))
+
+:heart: Honza ([@gynekolog](https://github.com/gynekolog))
+
+:heart: Moe Shaaban ([@mshaaban0](https://github.com/mshaaban0))
+
+#### 🚀 Enhancement
+
+- Feat/enable custom element [#44](https://github.com/hipstersmoothie/react-glider/pull/44) ([@mshaaban0](https://github.com/mshaaban0))
+
+#### 🐛 Bug Fix
+
+- Update scrollItem() typing [#46](https://github.com/hipstersmoothie/react-glider/pull/46) ([@dricholm](https://github.com/dricholm))
+- Fix resizeLock prop type [#48](https://github.com/hipstersmoothie/react-glider/pull/48) ([@gynekolog](https://github.com/gynekolog))
+
+#### ⚠️ Pushed to `master`
+
+- fix lint ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### 🏠 Internal
+
+- Upgrade auto + add contributors [#41](https://github.com/hipstersmoothie/react-glider/pull/41) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 4
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+- David Richolm ([@dricholm](https://github.com/dricholm))
+- Honza ([@gynekolog](https://github.com/gynekolog))
+- Moe Shaaban ([@mshaaban0](https://github.com/mshaaban0))
+
+---
+
 # v2.0.4 (Mon Nov 09 2020)
 
 #### 🐛 Bug Fix
