@@ -57,7 +57,7 @@ export interface GliderProps {
   /**
    * If true, Glider.js will scroll to the beginning/end when its respective endpoint is reached
    */
-  rewind?: number;
+  rewind?: boolean;
   /**
    * An aggravator used to control animation speed. Higher is slower!
    *
