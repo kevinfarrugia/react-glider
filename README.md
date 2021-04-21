@@ -93,6 +93,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://mshaaban.com/"><img src="https://avatars.githubusercontent.com/u/6163988?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Moe Shaaban</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=mshaaban0" title="Documentation">📖</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=mshaaban0" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.drivenow.com.au/"><img src="https://avatars.githubusercontent.com/u/672405?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cameron Braid</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=cameronbraid" title="Code">💻</a></td>
   </tr>
 </table>
 
