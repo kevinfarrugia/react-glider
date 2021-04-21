@@ -1,3 +1,19 @@
+# v2.1.1 (Wed Apr 21 2021)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Cameron Braid ([@cameronbraid](https://github.com/cameronbraid)), for all your work!
+
+#### 🐛 Bug Fix
+
+- fix: change type for rewind prop to boolean [#54](https://github.com/hipstersmoothie/react-glider/pull/54) ([@cameronbraid](https://github.com/cameronbraid))
+
+#### Authors: 1
+
+- Cameron Braid ([@cameronbraid](https://github.com/cameronbraid))
+
+---
+
 # v2.1.0 (Sun Mar 14 2021)
 
 :tada: This release contains work from new contributors! :tada:
