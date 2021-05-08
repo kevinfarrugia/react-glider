@@ -1,3 +1,15 @@
+# v2.1.2 (Sat May 08 2021)
+
+#### 🐛 Bug Fix
+
+- fix: upgrading glider-js version [#53](https://github.com/hipstersmoothie/react-glider/pull/53) ([@zeelMT](https://github.com/zeelMT))
+
+#### Authors: 1
+
+- [@zeelMT](https://github.com/zeelMT)
+
+---
+
 # v2.1.1 (Wed Apr 21 2021)
 
 :tada: This release contains work from a new contributor! :tada:
