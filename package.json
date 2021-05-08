@@ -103,7 +103,7 @@
   },
   "dependencies": {
     "@reach/auto-id": "^0.12.1",
-    "glider-js": "1.7.1"
+    "glider-js": "1.7.6"
   },
   "storybook-deployer": {
     "gitUsername": "hipstersmoothie",
