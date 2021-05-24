@@ -29,7 +29,7 @@ interface PaneProps {
 }
 
 const Pane: React.FC<PaneProps> = ({ children, style, className }) => (
-  <div className={`glider-slide ${className}`} style={style}>
+  <div className={`glider-slide ${className ? className : ""}`} style={style}>
     <h1>{children}</h1>
   </div>
 );
