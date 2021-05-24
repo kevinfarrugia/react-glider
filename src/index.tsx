@@ -136,21 +136,21 @@ export interface GliderProps {
   easing?(x: number, t: number, b: number, c: number, d: number): number;
 
   /** Called after Glider.js is first initialized */
-  onLoad?(context: any, event: Event): void;
+  onLoad?(event: Event): void;
   /** Called whenever a Glider.js paging animation is complete */
-  onAnimated?(context: any, event: Event): void;
+  onAnimated?(event: Event): void;
   /** Called whenever a Glider.js animation is complete */
-  onRemove?(context: any, event: Event): void;
+  onRemove?(event: Event): void;
   /** Called whenever a slide a shown. Passed an object containing the slide index */
-  onSlideVisible?(context: any, event: Event): void;
+  onSlideVisible?(event: Event): void;
   /** Called whenever Glider.js refreshes it's elements or settings */
-  onRefresh?(context: any, event: Event): void;
+  onRefresh?(event: Event): void;
   /** Called whenever an item is added to Glider.js */
-  onAdd?(context: any, event: Event): void;
+  onAdd?(event: Event): void;
   /** Called whenever a Glider.js is destroyed */
-  onDestroy?(context: any, event: Event): void;
+  onDestroy?(event: Event): void;
   /** Called whenever a slide a hidden. Passed an object containing the slide index */
-  onSlideHidden?(context: any, event: Event): void;
+  onSlideHidden?(event: Event): void;
 }
 
 type GliderOptions = Pick<
