@@ -29,7 +29,7 @@ interface PaneProps {
 }
 
 const Pane: React.FC<PaneProps> = ({ children, style, className }) => (
-  <div className={`glider-slide ${className}`} style={style}>
+  <div className={`glider-slide ${className ? className : ''}`} style={style}>
     <h1>{children}</h1>
   </div>
 );
@@ -274,4 +274,39 @@ storiesOf('Glider', module)
         </Glider>
       </>
     );
-  });
+  })
+  .add('Custom Events', () => (
+    <Glider
+      draggable
+      hasArrows
+      hasDots
+      slidesToScroll={5}
+      slidesToShow={5}
+      className="gradient-outline"
+      onSlideVisible={(e) => {
+        console.log("Slide Visible %s", e.detail.slide);
+      }}
+      onSlideHidden={(e) => {
+        console.log("Slide Hidden %s", e.detail.slide);
+      }}
+      onRefresh={() => {
+        console.log("Refresh");
+      }}
+      onLoad={() => {
+        console.log("Loaded");
+      }}
+    >
+      <Pane>1</Pane>
+      <Pane>2</Pane>
+      <Pane>3</Pane>
+      <Pane>4</Pane>
+      <Pane>5</Pane>
+      <Pane>6</Pane>
+      <Pane>7</Pane>
+      <Pane>8</Pane>
+      <Pane>9</Pane>
+      <Pane>10</Pane>
+      <Pane>11</Pane>
+      <Pane>12</Pane>
+    </Glider>
+  ));
