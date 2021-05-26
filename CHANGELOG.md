@@ -1,3 +1,19 @@
+# v2.2.0 (Wed May 26 2021)
+
+#### 🚀 Enhancement
+
+- Add event listeners before Glider initialisation [#65](https://github.com/hipstersmoothie/react-glider/pull/65) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### 🐛 Bug Fix
+
+- Update type definitions for events [#64](https://github.com/hipstersmoothie/react-glider/pull/64) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v2.1.2 (Sat May 08 2021)
 
 #### 🐛 Bug Fix
