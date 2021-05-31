@@ -349,7 +349,7 @@ storiesOf('Glider', module)
           className="glider-prev"
           aria-label="Previous"
         >
-          «
+          PREVIOUS
         </button>
         <button
           id="buttonNext"
@@ -357,7 +357,7 @@ storiesOf('Glider', module)
           className="glider-next"
           aria-label="Next"
         >
-          »
+          NEXT
         </button>
       </div>
     </>
