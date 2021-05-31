@@ -284,16 +284,16 @@ storiesOf('Glider', module)
       slidesToShow={5}
       className="gradient-outline"
       onSlideVisible={(e) => {
-        console.log("Slide Visible %s", e.detail.slide);
+        console.log('Slide Visible %s', e.detail.slide);
       }}
       onSlideHidden={(e) => {
-        console.log("Slide Hidden %s", e.detail.slide);
+        console.log('Slide Hidden %s', e.detail.slide);
       }}
       onRefresh={() => {
-        console.log("Refresh");
+        console.log('Refresh');
       }}
       onLoad={() => {
-        console.log("Loaded");
+        console.log('Loaded');
       }}
     >
       <Pane>1</Pane>
@@ -309,4 +309,56 @@ storiesOf('Glider', module)
       <Pane>11</Pane>
       <Pane>12</Pane>
     </Glider>
+  ))
+  .add('Multiple Gliders', () => (
+    <>
+      <Glider
+        draggable
+        hasArrows
+        hasDots
+        slidesToShow={2}
+        className="gradient-outline"
+      >
+        <Pane>1</Pane>
+        <Pane>2</Pane>
+        <Pane>3</Pane>
+        <Pane>4</Pane>
+        <Pane>5</Pane>
+        <Pane>6</Pane>
+      </Glider>
+      <Glider
+        draggable
+        hasArrows
+        hasDots
+        slidesToShow={1}
+        className="gradient-outline"
+        arrows={{
+          prev: '#buttonPrev',
+          next: '#buttonNext',
+        }}
+      >
+        <Pane>1</Pane>
+        <Pane>2</Pane>
+        <Pane>3</Pane>
+        <Pane>4</Pane>
+      </Glider>
+      <div style={{ position: 'relative' }}>
+        <button
+          id="buttonPrev"
+          type="button"
+          className="glider-prev"
+          aria-label="Previous"
+        >
+          «
+        </button>
+        <button
+          id="buttonNext"
+          type="button"
+          className="glider-next"
+          aria-label="Next"
+        >
+          »
+        </button>
+      </div>
+    </>
   ));
