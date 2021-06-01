@@ -6907,10 +6907,10 @@ gitlog@^4.0.3:
     debug "^4.1.1"
     tslib "^1.11.1"
 
-glider-js@1.7.6:
-  version "1.7.6"
-  resolved "https://registry.yarnpkg.com/glider-js/-/glider-js-1.7.6.tgz#0285436ab13c6895914caa285c6bca4c729c05d0"
-  integrity sha512-m2QiQl5bE10DvFBmJoL7Vkjjq26Ylq+OzABIfqD2l//A2WUuqr+NkoxEqJlcGxh5od0d0y943U7A0nd1GASwrg==
+glider-js@1.7.7:
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/glider-js/-/glider-js-1.7.7.tgz#24508efecf6f20fd32b08b2940e4762e1c35fa23"
+  integrity sha512-jowNSpd/38EG0Kw83NgTo4F9YSAcpWQxBw0SFZcc2FysZD+dUuW/AcSeFU27rwGJilqdocKbw12IHOKi+DtpZw==
 
 glob-base@^0.3.0:
   version "0.3.0"
