@@ -23,7 +23,6 @@ export interface GliderProps {
   iconRight?: React.ReactNode;
   scrollToSlide?: number;
   scrollToPage?: number;
-  addTrack?: boolean;
 
   /**
    * The number of slides to show in container

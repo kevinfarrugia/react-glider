@@ -1,7 +1,7 @@
 {
   "name": "react-glider",
   "version": "2.2.0",
-  "description": "A react wrapper for glider.js",
+  "description": "A ReactJS wrapper for glider.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": {
@@ -16,6 +16,7 @@
     "type": "git",
     "url": "https://github.com/hipstersmoothie/react-glider"
   },
+  "license": "MIT",
   "scripts": {
     "lint": "tslint -p . --format stylish",
     "build": "tsc",
