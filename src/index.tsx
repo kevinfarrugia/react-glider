@@ -67,8 +67,8 @@ export interface GliderProps {
   dots?: string;
   /** An object containing the prev/next arrows selectors */
   arrows?: {
-    prev: string;
-    next: string;
+    prev: string | JSX.Element;
+    next: string | JSX.Element;
   };
 
   /**
@@ -180,6 +180,19 @@ export interface GliderMethods {
   scrollTo(pixelOffset: number): void;
   scrollItem(slideIndex: string | number, isActuallyDotIndex?: boolean): void;
 }
+
+
+export const useElement = (): [JSX.Element | undefined, (node: any) => void] => {
+  const [element, setElement] = React.useState<JSX.Element | undefined>(undefined);
+
+  const ref = React.useCallback((node) => {
+    if (node !== null) {
+      setElement(node);
+    }
+  }, []);
+
+  return [element, ref];
+};
 
 const GliderComponent = React.forwardRef(
   (props: GliderProps, ref: React.Ref<GliderMethods>) => {

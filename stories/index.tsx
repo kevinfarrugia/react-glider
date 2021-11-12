@@ -3,7 +3,7 @@ import { storiesOf, DecoratorFn } from '@storybook/react';
 import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 
 import '../glider.defaults.css';
-import Glider, { GliderMethods } from '../src';
+import Glider, { GliderMethods, useElement } from '../src';
 
 const styles = {
   width: '80%',
@@ -361,4 +361,61 @@ storiesOf('Glider', module)
         </button>
       </div>
     </>
-  ));
+  )).add('Custom Element Arrows', () => {
+
+    const [leftElement, leftArrowRef] = useElement()
+    const [rightElement, rightArrowRef] = useElement()
+
+    return (
+      <>
+        <Glider
+          draggable
+          hasArrows
+          hasDots
+          slidesToShow={2}
+          className="gradient-outline"
+        >
+          <Pane>1</Pane>
+          <Pane>2</Pane>
+          <Pane>3</Pane>
+          <Pane>4</Pane>
+          <Pane>5</Pane>
+          <Pane>6</Pane>
+        </Glider>
+        <Glider
+          draggable
+          hasArrows
+          hasDots
+          slidesToShow={1}
+          className="gradient-outline"
+          arrows={{
+            prev: leftElement,
+            next: rightElement,
+          }}
+        >
+          <Pane>1</Pane>
+          <Pane>2</Pane>
+          <Pane>3</Pane>
+          <Pane>4</Pane>
+        </Glider>
+        <div style={{ position: 'relative' }}>
+          <button
+            ref={leftArrowRef}
+            type="button"
+            className="glider-prev"
+            aria-label="Previous"
+          >
+            PREVIOUS
+          </button>
+          <button
+            ref={rightArrowRef}
+            type="button"
+            className="glider-next"
+            aria-label="Next"
+          >
+            NEXT
+          </button>
+        </div>
+      </>  
+    )
+  })
