@@ -67,8 +67,8 @@ export interface GliderProps {
   dots?: string;
   /** An object containing the prev/next arrows selectors */
   arrows?: {
-    prev: string;
-    next: string;
+    prev: string | HTMLElement;
+    next: string | HTMLElement;
   };
 
   /**

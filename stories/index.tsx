@@ -361,4 +361,54 @@ storiesOf('Glider', module)
         </button>
       </div>
     </>
-  ));
+  ))
+  .add('Custom Element Arrows', () => {
+    const leftArrowEl = React.useRef<HTMLButtonElement>(null);
+    const rightArrowEl = React.useRef<HTMLButtonElement>(null);
+    const [isInitialized, setIsInitialized] = React.useState(false);
+
+    React.useEffect(() => {
+      setIsInitialized(Boolean(leftArrowEl.current && rightArrowEl.current));
+    }, [leftArrowEl, rightArrowEl]);
+
+    return (
+      <>
+        <div style={{ position: 'relative' }}>
+          <button
+            ref={leftArrowEl}
+            type="button"
+            className="glider-prev"
+            aria-label="Previous"
+          >
+            PREVIOUS
+          </button>
+          <button
+            ref={rightArrowEl}
+            type="button"
+            className="glider-next"
+            aria-label="Next"
+          >
+            NEXT
+          </button>
+        </div>
+        {isInitialized && (
+          <Glider
+            draggable
+            hasArrows
+            hasDots
+            slidesToShow={1}
+            className="gradient-outline"
+            arrows={{
+              prev: leftArrowEl.current,
+              next: rightArrowEl.current,
+            }}
+          >
+            <Pane>1</Pane>
+            <Pane>2</Pane>
+            <Pane>3</Pane>
+            <Pane>4</Pane>
+          </Glider>
+        )}
+      </>
+    );
+  });
