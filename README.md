@@ -94,6 +94,47 @@ import Glider from 'react-glider/glider.defaults.css';
 | containerElement | Replace container HTML element.                                                                                                                                                                                                                           |
 | easing           | Use any custom easing function, compatible with most easing plugins.                                                                                                                                                                                      |
 
+### Arrows
+
+If the Glider component should display arrows, you are are able to configure these using the `arrows` prop.
+
+#### Selectors
+
+The `arrow` prop supports an object containing `left` and `right` CSS selectors.
+
+```jsx
+arrows={{
+  prev: '#buttonPrev',
+  next: '#buttonNext',
+}}
+```
+
+_Note that if you have multiple Glider elements on the same page, you need to assign a different CSS selector to each Glider._
+
+#### Elements
+
+The `arrow` prop supports an object containing `left` and `right` references to an HTML element.
+
+When using native HTML elements:
+
+```jsx
+arrows={{
+  prev: document.getElementById("prev"),
+  next: document.getElementById("next")
+}}
+```
+
+When using `React.useRef`:
+
+```jsx
+arrows={{
+  prev: leftArrowEl.current,
+  next: rightArrowEl.current,
+}}
+```
+
+_Note that `React.useRef` will assign a value to `current` after the component has rendered. This means that on the first render, `current` is null._
+
 ### Events
 
 | Event          | Description                                                                   |
