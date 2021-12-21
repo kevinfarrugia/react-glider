@@ -349,7 +349,12 @@ storiesOf('Glider', module)
           className="glider-prev"
           aria-label="Previous"
         >
-          PREVIOUS
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.075 34.075">
+            <path
+              fill="#010002"
+              d="M24.57 34.075a1.964 1.964 0 0 1-1.396-.577L8.11 18.432a1.972 1.972 0 0 1 0-2.79L23.174.578a1.973 1.973 0 1 1 2.791 2.79l-13.67 13.669 13.67 13.669a1.974 1.974 0 0 1-1.395 3.369z"
+            />
+          </svg>
         </button>
         <button
           id="buttonNext"
@@ -357,8 +362,76 @@ storiesOf('Glider', module)
           className="glider-next"
           aria-label="Next"
         >
-          NEXT
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185.343 185.343">
+            <path
+              fill="#010002"
+              d="M51.707 185.343a10.692 10.692 0 0 1-7.593-3.149 10.724 10.724 0 0 1 0-15.175l74.352-74.347L44.114 18.32c-4.194-4.194-4.194-10.987 0-15.175 4.194-4.194 10.987-4.194 15.18 0l81.934 81.934c4.194 4.194 4.194 10.987 0 15.175l-81.934 81.939a10.678 10.678 0 0 1-7.587 3.15z"
+            />
+          </svg>
         </button>
       </div>
     </>
-  ));
+  ))
+  .add('Custom Element Arrows', () => {
+    const leftArrowEl = React.useRef<HTMLButtonElement>(null);
+    const rightArrowEl = React.useRef<HTMLButtonElement>(null);
+    const [isInitialized, setIsInitialized] = React.useState(false);
+
+    React.useEffect(() => {
+      setIsInitialized(Boolean(leftArrowEl.current && rightArrowEl.current));
+    }, [leftArrowEl, rightArrowEl]);
+
+    return (
+      <>
+        {isInitialized && (
+          <Glider
+            draggable
+            hasArrows
+            hasDots
+            slidesToShow={1}
+            className="gradient-outline"
+            arrows={{
+              prev: leftArrowEl.current,
+              next: rightArrowEl.current,
+            }}
+          >
+            <Pane>1</Pane>
+            <Pane>2</Pane>
+            <Pane>3</Pane>
+            <Pane>4</Pane>
+          </Glider>
+        )}
+        <div style={{ position: 'relative' }}>
+          <button
+            ref={leftArrowEl}
+            type="button"
+            className="glider-prev"
+            aria-label="Previous"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.075 34.075">
+              <path
+                fill="#010002"
+                d="M24.57 34.075a1.964 1.964 0 0 1-1.396-.577L8.11 18.432a1.972 1.972 0 0 1 0-2.79L23.174.578a1.973 1.973 0 1 1 2.791 2.79l-13.67 13.669 13.67 13.669a1.974 1.974 0 0 1-1.395 3.369z"
+              />
+            </svg>
+          </button>
+          <button
+            ref={rightArrowEl}
+            type="button"
+            className="glider-next"
+            aria-label="Next"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 185.343 185.343"
+            >
+              <path
+                fill="#010002"
+                d="M51.707 185.343a10.692 10.692 0 0 1-7.593-3.149 10.724 10.724 0 0 1 0-15.175l74.352-74.347L44.114 18.32c-4.194-4.194-4.194-10.987 0-15.175 4.194-4.194 10.987-4.194 15.18 0l81.934 81.934c4.194 4.194 4.194 10.987 0 15.175l-81.934 81.939a10.678 10.678 0 0 1-7.587 3.15z"
+              />
+            </svg>
+          </button>
+        </div>
+      </>
+    );
+  });

@@ -170,27 +170,18 @@ Thanks for all your work!
 
 # 1.1.5 (Tue Nov 26 2019)
 
-
-
 ---
 
 # 1.1.4 (Wed Aug 28 2019)
-
-
 
 ---
 
 # 1.1.3 (Fri Aug 09 2019)
 
-
-
 ---
 
 # 1.1.2 (Tue Jan 01 2019)
 
-
-
 ---
 
 # 1.1.1 (Mon Dec 31 2018)
-

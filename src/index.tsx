@@ -67,8 +67,8 @@ export interface GliderProps {
   dots?: string;
   /** An object containing the prev/next arrows selectors */
   arrows?: {
-    prev: string;
-    next: string;
+    prev: string | HTMLElement;
+    next: string | HTMLElement;
   };
 
   /**
@@ -196,10 +196,10 @@ const GliderComponent = React.forwardRef(
       arrows:
         (props.hasArrows && {
           next:
-            (props.arrows && props.arrows.next && props.arrows.next) ||
+            (props.arrows && props.arrows.next) ||
             `#${nextBtnId}`,
           prev:
-            (props.arrows && props.arrows.prev && props.arrows.prev) ||
+            (props.arrows && props.arrows.prev) ||
             `#${prevBtnId}`,
         }) ||
         undefined,
