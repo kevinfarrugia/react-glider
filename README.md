@@ -100,7 +100,7 @@ If the Glider component should display arrows, you are are able to configure the
 
 #### Selectors
 
-The `arrow` prop supports an object containing `left` and `right` CSS selectors.
+The `arrows` prop supports an object containing `left` and `right` CSS selectors.
 
 ```jsx
 arrows={{
@@ -113,7 +113,7 @@ _Note that if you have multiple Glider elements on the same page, you need to as
 
 #### Elements
 
-The `arrow` prop supports an object containing `left` and `right` references to an HTML element.
+The `arrows` prop supports an object containing `left` and `right` references to an HTML element.
 
 When using native HTML elements:
 
