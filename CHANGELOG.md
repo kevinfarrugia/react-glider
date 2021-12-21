@@ -1,3 +1,18 @@
+# v2.2.1 (Thu Sep 23 2021)
+
+#### 🐛 Bug Fix
+
+- Updated README.md [#81](https://github.com/hipstersmoothie/react-glider/pull/81) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+- Added storybook with multiple gliders [#67](https://github.com/hipstersmoothie/react-glider/pull/67) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+- Updated glider-js to 1.7.7 [#68](https://github.com/hipstersmoothie/react-glider/pull/68) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+- Updated documentation [#74](https://github.com/hipstersmoothie/react-glider/pull/74) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v2.2.0 (Wed May 26 2021)
 
 #### 🚀 Enhancement
@@ -155,27 +170,18 @@ Thanks for all your work!
 
 # 1.1.5 (Tue Nov 26 2019)
 
-
-
 ---
 
 # 1.1.4 (Wed Aug 28 2019)
-
-
 
 ---
 
 # 1.1.3 (Fri Aug 09 2019)
 
-
-
 ---
 
 # 1.1.2 (Tue Jan 01 2019)
 
-
-
 ---
 
 # 1.1.1 (Mon Dec 31 2018)
-

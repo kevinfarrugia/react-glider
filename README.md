@@ -191,6 +191,36 @@ yarn
 yarn storybook
 ```
 
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://hipstersmoothie.com/"><img src="https://avatars3.githubusercontent.com/u/1192452?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrew Lisowski</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=hipstersmoothie" title="Code">💻</a> <a href="#design-hipstersmoothie" title="Design">🎨</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=hipstersmoothie" title="Documentation">📖</a> <a href="#infra-hipstersmoothie" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-hipstersmoothie" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="http://bitnoi.se/"><img src="https://avatars1.githubusercontent.com/u/156628?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adam Misiorny</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=adam187" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/zeelMT"><img src="https://avatars1.githubusercontent.com/u/35482746?v=4?s=100" width="100px;" alt=""/><br /><sub><b>zeelMT</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=zeelMT" title="Code">💻</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=zeelMT" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/vinkodlak"><img src="https://avatars2.githubusercontent.com/u/24816470?v=4?s=100" width="100px;" alt=""/><br /><sub><b>vinkodlak</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=vinkodlak" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/stanislavvasilyev-sravni"><img src="https://avatars2.githubusercontent.com/u/60090959?v=4?s=100" width="100px;" alt=""/><br /><sub><b>stanislavvasilyev-sravni</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=stanislavvasilyev-sravni" title="Code">💻</a></td>
+    <td align="center"><a href="https://imkev.dev/"><img src="https://avatars1.githubusercontent.com/u/8075326?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kevin Farrugia</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=kevinfarrugia" title="Code">💻</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=kevinfarrugia" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/hotscotch92"><img src="https://avatars1.githubusercontent.com/u/47922069?v=4?s=100" width="100px;" alt=""/><br /><sub><b>hotscotch92</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=hotscotch92" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://mshaaban.com/"><img src="https://avatars.githubusercontent.com/u/6163988?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Moe Shaaban</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=mshaaban0" title="Documentation">📖</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=mshaaban0" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.drivenow.com.au/"><img src="https://avatars.githubusercontent.com/u/672405?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cameron Braid</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=cameronbraid" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
 ## License and Copyright
 
 This software is released under the terms of the [MIT license](https://github.com/hipstersmoothie/react-glider/blob/master/LICENSE).
