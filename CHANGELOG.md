@@ -1,3 +1,19 @@
+# v3.0.0 (Tue Dec 21 2021)
+
+#### 💥 Breaking Change
+
+- Updated to React 17 [#83](https://github.com/hipstersmoothie/react-glider/pull/83) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### 🐛 Bug Fix
+
+- Custom element arrows [#86](https://github.com/hipstersmoothie/react-glider/pull/86) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v2.2.1 (Thu Sep 23 2021)
 
 #### 🐛 Bug Fix
