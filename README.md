@@ -4,7 +4,7 @@
 
 A [React](https://reactjs.org/) wrapper for [Glider.js](https://github.com/NickPiscitelli/Glider.js/).
 
-Storybook playground available on GitHub pages: https://hipstersmoothie.github.io/react-glider/
+### [Demo](https://codesandbox.io/s/react-glider-demo-y5klj) | [Storybook](https://hipstersmoothie.github.io/react-glider/)
 
 ## Quick Start
 
