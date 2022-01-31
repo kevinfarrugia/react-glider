@@ -31,11 +31,11 @@ import 'glider-js/glider.min.css';
   slidesToShow={2}
   slidesToScroll={1}
 >
-  <Pane>1</Pane>
-  <Pane>2</Pane>
-  <Pane>3</Pane>
-  <Pane>4</Pane>
-  <Pane>5</Pane>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
 </Glider>
 ```
 
