@@ -103,7 +103,7 @@
     ]
   },
   "dependencies": {
-    "@reach/auto-id": "^0.12.1",
+    "@reach/auto-id": "^0.16.0",
     "glider-js": "1.7.7"
   },
   "storybook-deployer": {
