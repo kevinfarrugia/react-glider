@@ -1,3 +1,21 @@
+# v3.0.1 (Wed Feb 02 2022)
+
+#### 🐛 Bug Fix
+
+- Update @reach/auto-id to 0.16.0 [#97](https://github.com/hipstersmoothie/react-glider/pull/97) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### 📝 Documentation
+
+- Updated CircleCI to use LTS node version [#94](https://github.com/hipstersmoothie/react-glider/pull/94) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+- Added link to demo in README [#93](https://github.com/hipstersmoothie/react-glider/pull/93) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+- Updated typo with  prop [#90](https://github.com/hipstersmoothie/react-glider/pull/90) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v3.0.0 (Tue Dec 21 2021)
 
 #### 💥 Breaking Change
