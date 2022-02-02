@@ -181,7 +181,7 @@ export interface GliderMethods {
   scrollItem(slideIndex: string | number, isActuallyDotIndex?: boolean): void;
 }
 
-const GliderComponent = React.forwardRef(
+export const GliderComponent = React.forwardRef(
   (props: GliderProps, ref: React.Ref<GliderMethods>) => {
     const innerRef = React.useRef<HTMLDivElement>(null);
     const gliderRef = React.useRef<GliderMethods>();
@@ -195,12 +195,8 @@ const GliderComponent = React.forwardRef(
       ...props,
       arrows:
         (props.hasArrows && {
-          next:
-            (props.arrows && props.arrows.next) ||
-            `#${nextBtnId}`,
-          prev:
-            (props.arrows && props.arrows.prev) ||
-            `#${prevBtnId}`,
+          next: (props.arrows && props.arrows.next) || `#${nextBtnId}`,
+          prev: (props.arrows && props.arrows.prev) || `#${prevBtnId}`,
         }) ||
         undefined,
       dots: (props.hasDots && props.dots) || `#${dotsId}` || undefined,
