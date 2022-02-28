@@ -1,3 +1,20 @@
+# (Mon Feb 28 2022)
+
+#### ⚠️ Pushed to `master`
+
+- Revert "Updated useEffect dependencies to reinitialize when a prop has changed" (kevin.farrugia@incredible-web.com)
+- Updated useEffect dependencies to reinitialize when a prop has changed (kevin.farrugia@incredible-web.com)
+
+#### 📝 Documentation
+
+- Readme faq [#104](https://github.com/hipstersmoothie/react-glider/pull/104) (kevin.farrugia@incredible-web.com)
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v3.0.1 (Wed Feb 02 2022)
 
 #### 🐛 Bug Fix
