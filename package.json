@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" src/*",
+    "lint": "tslint -p . --format stylish",
     "build": "tsc",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "deploy-storybook": "storybook-to-ghpages",
@@ -33,33 +33,27 @@
     "@storybook/addon-storysource": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@storybook/storybook-deployer": "2.8.1",
-    "@types/glider-js": "^1.7.6",
     "@types/jest": "23.3.11",
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
-    "@typescript-eslint/parser": "^5.12.1",
+    "@types/lodash.times": "^4.3.4",
     "auto": "^10.3.0",
     "auto-config-hipstersmoothie": "^4.0.0",
     "awesome-typescript-loader": "5.2.1",
     "babel-core": "6.26.3",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "8.0.4",
-    "eslint": "^8.10.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.4.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.2",
-    "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "1.3.1",
     "jest": "23.6.0",
     "lint-staged": "8.1.0",
+    "lodash.times": "^4.3.2",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-docgen-typescript-webpack-plugin": "1.1.0",
     "react-dom": "^16.13.1",
     "ts-jest": "23.10.5",
+    "tslint": "5.12.0",
+    "tslint-config-prettier": "1.17.0",
+    "tslint-xo": "0.11.0",
     "typescript": "^3.9.3",
+    "typescript-tslint-plugin": "0.2.1",
     "webpack": "4.28.3"
   },
   "prettier": {
@@ -71,8 +65,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "eslint --no-ignore --fix",
+    "*.{js,json,css,md}": [
+      "prettier --write",
       "git add"
     ]
   },
