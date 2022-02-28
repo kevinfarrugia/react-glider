@@ -1,3 +1,15 @@
+# v3.0.4 (Mon Feb 28 2022)
+
+#### 🐛 Bug Fix
+
+- Updated useEffect dependencies to reinitialize when a prop has changed [#107](https://github.com/hipstersmoothie/react-glider/pull/107) (kevin.farrugia@incredible-web.com)
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v3.0.3 (Mon Feb 28 2022)
 
 
