@@ -1,8 +1,11 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-console */
 import * as React from 'react';
 import { storiesOf, DecoratorFn } from '@storybook/react';
 import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 
 import '../glider.defaults.css';
+// eslint-disable-next-line import/extensions
 import Glider, { GliderMethods } from '../src';
 
 const styles = {
@@ -10,7 +13,7 @@ const styles = {
   margin: 'auto',
 };
 
-const Wrapper = ({ children, style }: any) => (
+const Wrapper = ({ children, style }) => (
   <div style={style || styles}>{children}</div>
 );
 
@@ -29,7 +32,7 @@ interface PaneProps {
 }
 
 const Pane: React.FC<PaneProps> = ({ children, style, className }) => (
-  <div className={`glider-slide ${className ? className : ''}`} style={style}>
+  <div className={`glider-slide ${className || ''}`} style={style}>
     <h1>{children}</h1>
   </div>
 );
@@ -247,7 +250,9 @@ storiesOf('Glider', module)
 
     return (
       <>
-        <button onClick={() => gliderRef.current.destroy()}>Destroy!</button>
+        <button type="button" onClick={() => gliderRef.current.destroy()}>
+          Destroy!
+        </button>
         <Glider
           draggable
           hasArrows
@@ -433,5 +438,83 @@ storiesOf('Glider', module)
           </button>
         </div>
       </>
+    );
+  })
+  .add('Unmounting & remounting', () => {
+    const [isVisible, setIsVisible] = React.useState(false);
+
+    return (
+      <div>
+        <button
+          type="button"
+          onClick={() => {
+            setIsVisible(!isVisible);
+          }}
+        >
+          Toggle
+        </button>
+        {isVisible ? (
+          <div>
+            <Glider
+              draggable
+              hasArrows
+              hasDots
+              slidesToShow={1}
+              className="gradient-outline"
+            >
+              <Pane>1</Pane>
+              <Pane>2</Pane>
+              <Pane>3</Pane>
+              <Pane>4</Pane>
+              <Pane>5</Pane>
+              <Pane>6</Pane>
+              <Pane>7</Pane>
+              <Pane>8</Pane>
+              <Pane>9</Pane>
+              <Pane>10</Pane>
+              <Pane>11</Pane>
+              <Pane>12</Pane>
+            </Glider>
+          </div>
+        ) : null}
+      </div>
+    );
+  })
+  .add('Updating props', () => {
+    const [slidesToShow, setSlidesToShow] = React.useState(1);
+
+    return (
+      <div>
+        Number of slides:
+        <select
+          value={slidesToShow}
+          onChange={(e) => setSlidesToShow(parseInt(e.target.value, 10))}
+        >
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+        <Glider
+          draggable
+          hasArrows
+          hasDots
+          slidesToShow={slidesToShow}
+          className="gradient-outline"
+        >
+          <Pane>1</Pane>
+          <Pane>2</Pane>
+          <Pane>3</Pane>
+          <Pane>4</Pane>
+          <Pane>5</Pane>
+          <Pane>6</Pane>
+          <Pane>7</Pane>
+          <Pane>8</Pane>
+          <Pane>9</Pane>
+          <Pane>10</Pane>
+          <Pane>11</Pane>
+          <Pane>12</Pane>
+        </Glider>
+      </div>
     );
   });
