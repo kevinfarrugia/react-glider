@@ -1,20 +1,19 @@
 import * as React from 'react';
 import { useId } from '@reach/auto-id';
-
-// tslint:disable-next-line
-import 'glider-js';
+import Glider from 'glider-js';
 
 export interface BreakPoint {
   breakpoint: number;
   settings: {
-    slidesToShow: number | 'auto';
-    slidesToScroll: number | 'auto';
+    slidesToShow?: number | 'auto';
+    slidesToScroll?: number | 'auto';
     itemWidth?: number;
     duration?: number;
   };
 }
 
 export interface GliderProps {
+  id?: string;
   children: React.ReactNode;
   hasArrows?: boolean;
   hasDots?: boolean;
@@ -48,7 +47,7 @@ export interface GliderProps {
    * This prevents resizing items to fit when slidesToShow is set to auto.
    * NOTE: This will yield fractional slides if your container is not sized appropriately
    */
-  exactWidth?: number;
+  exactWidth?: boolean;
   /**
    * If true, Glider.js will lock to the nearest slide on resizing of the window
    */
@@ -64,11 +63,11 @@ export interface GliderProps {
    */
   duration?: number;
   /** An string containing the dot container selector */
-  dots?: string;
+  dots?: Glider.Selector | null;
   /** An object containing the prev/next arrows selectors */
   arrows?: {
-    prev: string | HTMLElement;
-    next: string | HTMLElement;
+    prev: Glider.Selector | null;
+    next: Glider.Selector | null;
   };
 
   /**
@@ -183,130 +182,200 @@ export interface GliderMethods {
 
 const GliderComponent = React.forwardRef(
   (props: GliderProps, ref: React.Ref<GliderMethods>) => {
+    const {
+      id,
+      containerElement,
+      arrows,
+      dots,
+      hasArrows,
+      hasDots,
+      scrollToSlide,
+      scrollToPage,
+      className,
+      iconLeft,
+      iconRight,
+      children,
+      onSlideVisible,
+      onLoad,
+      onAnimated,
+      onRemove,
+      onRefresh,
+      onAdd,
+      onDestroy,
+      onSlideHidden,
+      ...restProps
+    } = props;
+
     const innerRef = React.useRef<HTMLDivElement>(null);
     const gliderRef = React.useRef<GliderMethods>();
-    const isMountedRef = React.useRef<boolean>(false);
-    const autoId = useId();
+    const autoId = useId(id);
     const nextBtnId = `glider-next-${autoId}`;
     const prevBtnId = `glider-prev-${autoId}`;
     const dotsId = `dots-${autoId}`;
 
-    const makeGliderOptions = () => ({
-      ...props,
-      arrows:
-        (props.hasArrows && {
-          next:
-            (props.arrows && props.arrows.next) ||
-            `#${nextBtnId}`,
-          prev:
-            (props.arrows && props.arrows.prev) ||
-            `#${prevBtnId}`,
-        }) ||
-        undefined,
-      dots: (props.hasDots && props.dots) || `#${dotsId}` || undefined,
-    });
+    const makeGliderOptions: () => Glider.Options = React.useCallback(
+      () => ({
+        ...restProps,
+        arrows:
+          (hasArrows && {
+            next: (arrows && arrows.next) || `#${nextBtnId}`,
+            prev: (arrows && arrows.prev) || `#${prevBtnId}`,
+          }) ||
+          undefined,
+        dots: (hasDots && dots) || `#${dotsId}` || undefined,
+      }),
+      [
+        restProps,
+        hasArrows,
+        arrows,
+        nextBtnId,
+        prevBtnId,
+        hasDots,
+        dots,
+        dotsId,
+      ]
+    );
 
-    // On mount initialize the glider and hook up events
+    // initialize the glider
     React.useLayoutEffect(() => {
-      if (!innerRef.current) {
-        return;
-      }
+      const { current } = innerRef;
 
-      const addEventListener = (event: string, fn: any) => {
-        if (typeof fn === 'function' && innerRef.current) {
-          innerRef.current.addEventListener(event, fn);
+      if (current) {
+        if (!gliderRef.current) {
+          const glider = new Glider(
+            current,
+            makeGliderOptions()
+          ) as GliderMethods;
+
+          gliderRef.current = glider;
+
+          if (scrollToSlide) {
+            glider.scrollItem(scrollToSlide - 1);
+          } else if (scrollToPage) {
+            glider.scrollItem(scrollToPage - 1, true);
+          }
         }
-      };
-
-      addEventListener('glider-slide-visible', props.onSlideVisible);
-      addEventListener('glider-loaded', props.onLoad);
-      addEventListener('glider-animated', props.onAnimated);
-      addEventListener('glider-remove', props.onRemove);
-      addEventListener('glider-refresh', props.onRefresh);
-      addEventListener('glider-add', props.onAdd);
-      addEventListener('glider-destroy', props.onDestroy);
-      addEventListener('glider-slide-hidden', props.onSlideHidden);
-
-      // @ts-ignore
-      const glider = new Glider(
-        innerRef.current,
-        makeGliderOptions()
-      ) as GliderMethods;
-      gliderRef.current = glider;
-
-      if (props.scrollToSlide) {
-        glider.scrollItem(props.scrollToSlide - 1);
-      } else if (props.scrollToPage) {
-        glider.scrollItem(props.scrollToPage - 1, true);
       }
-    }, []);
+    }, [makeGliderOptions, scrollToPage, scrollToSlide]);
 
+    // remove event listeners when props change
     React.useEffect(() => {
-      isMountedRef.current = true;
+      const { current } = innerRef;
 
       return () => {
-        const removeEventListener = (event: string, fn: any) => {
-          if (typeof fn === 'function' && innerRef.current) {
-            innerRef.current.removeEventListener(event, fn);
+        const removeEventListener = (
+          event: string,
+          fn: ((e: CustomEvent) => void) | undefined
+        ) => {
+          if (typeof fn === 'function' && current) {
+            current.removeEventListener(event, fn);
           }
         };
 
-        removeEventListener('glider-slide-visible', props.onSlideVisible);
-        removeEventListener('glider-loaded', props.onLoad);
-        removeEventListener('glider-animated', props.onAnimated);
-        removeEventListener('glider-remove', props.onRemove);
-        removeEventListener('glider-refresh', props.onRefresh);
-        removeEventListener('glider-add', props.onAdd);
-        removeEventListener('glider-destroy', props.onDestroy);
-        removeEventListener('glider-slide-hidden', props.onSlideHidden);
+        removeEventListener('glider-slide-visible', onSlideVisible);
+        removeEventListener('glider-loaded', onLoad);
+        removeEventListener('glider-animated', onAnimated);
+        removeEventListener('glider-remove', onRemove);
+        removeEventListener('glider-refresh', onRefresh);
+        removeEventListener('glider-add', onAdd);
+        removeEventListener('glider-destroy', onDestroy);
+        removeEventListener('glider-slide-hidden', onSlideHidden);
+      };
+    }, [
+      onAdd,
+      onAnimated,
+      onDestroy,
+      onLoad,
+      onRefresh,
+      onRemove,
+      onSlideHidden,
+      onSlideVisible,
+    ]);
 
-        if (gliderRef.current) {
-          gliderRef.current.destroy();
+    // update event listeners
+    React.useLayoutEffect(() => {
+      const { current } = innerRef;
+
+      if (current) {
+        const addEventListener = (
+          event: string,
+          fn: ((e: CustomEvent) => void) | undefined
+        ): void => {
+          if (typeof fn === 'function') {
+            current.addEventListener(event, fn);
+          }
+        };
+
+        addEventListener('glider-slide-visible', onSlideVisible);
+        addEventListener('glider-loaded', onLoad);
+        addEventListener('glider-animated', onAnimated);
+        addEventListener('glider-remove', onRemove);
+        addEventListener('glider-refresh', onRefresh);
+        addEventListener('glider-add', onAdd);
+        addEventListener('glider-destroy', onDestroy);
+        addEventListener('glider-slide-hidden', onSlideHidden);
+      }
+    }, [
+      onAdd,
+      onAnimated,
+      onDestroy,
+      onLoad,
+      onRefresh,
+      onRemove,
+      onSlideHidden,
+      onSlideVisible,
+    ]);
+
+    // when the props update, update the glider
+    React.useEffect(() => {
+      if (gliderRef.current) {
+        gliderRef.current.setOption(makeGliderOptions(), true);
+        gliderRef.current.refresh(true);
+      }
+    }, [makeGliderOptions]);
+
+    React.useEffect(() => {
+      const { current } = gliderRef;
+
+      return () => {
+        if (current) {
+          current.destroy();
         }
       };
     }, []);
-    // When the props update, update the glider
-    React.useEffect(() => {
-      if (!(gliderRef.current && isMountedRef.current)) {
-        return;
-      }
 
-      gliderRef.current.setOption(makeGliderOptions(), true);
-      gliderRef.current.refresh(true);
-    }, [props]);
-
-    // Expose the glider instance to the user so they can call the methods too
+    // expose the glider instance to the user so they can call the methods too
     React.useImperativeHandle(ref, () => gliderRef.current as GliderMethods);
 
-    const Element = props.containerElement || 'div';
+    const Element = containerElement || 'div';
 
     return (
       <Element className="glider-contain">
-        {props.hasArrows && !props.arrows && (
+        {props.hasArrows && !arrows && (
           <button
             type="button"
             className="glider-prev"
             aria-label="Previous"
             id={prevBtnId}
           >
-            {props.iconLeft || '«'}
+            {iconLeft || '«'}
           </button>
         )}
 
-        <div className={props.className} ref={innerRef}>
-          {props.children}
+        <div id={autoId} className={className} ref={innerRef}>
+          {children}
         </div>
 
-        {props.hasDots && !props.dots && <div id={dotsId} />}
+        {hasDots && !dots && <div id={dotsId} />}
 
-        {props.hasArrows && !props.arrows && (
+        {props.hasArrows && !arrows && (
           <button
             type="button"
             className="glider-next"
             aria-label="Next"
             id={nextBtnId}
           >
-            {props.iconRight || '»'}
+            {iconRight || '»'}
           </button>
         )}
       </Element>
