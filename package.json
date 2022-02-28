@@ -1,6 +1,6 @@
 {
   "name": "react-glider",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "A ReactJS wrapper for glider.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
