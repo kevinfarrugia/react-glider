@@ -1,3 +1,15 @@
+# v3.0.5 (Wed Mar 02 2022)
+
+#### 🐛 Bug Fix
+
+- Added peerDependencies to package.json [#109](https://github.com/hipstersmoothie/react-glider/pull/109) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v3.0.4 (Mon Feb 28 2022)
 
 #### 🐛 Bug Fix
