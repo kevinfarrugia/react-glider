@@ -62,6 +62,14 @@
     "typescript": "^3.9.3",
     "webpack": "4.28.3"
   },
+  "dependencies": {
+    "@reach/auto-id": "^0.16.0",
+    "glider-js": "1.7.7"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0",
+    "react-dom": "^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0"
+  },
   "prettier": {
     "singleQuote": true
   },
@@ -107,10 +115,6 @@
       "ts",
       "js"
     ]
-  },
-  "dependencies": {
-    "@reach/auto-id": "^0.16.0",
-    "glider-js": "1.7.7"
   },
   "storybook-deployer": {
     "gitUsername": "hipstersmoothie",
