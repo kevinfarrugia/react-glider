@@ -139,7 +139,7 @@ _Note that `React.useRef` will assign a value to `current` after the component h
 
 | Event          | Description                                                                   |
 | -------------- | ----------------------------------------------------------------------------- |
-| onLoad         | Called after Glider.js is first initialized                                   |
+| onLoad         | Called after Glider component is initialized.                                 |
 | onAnimated     | Called whenever a Glider.js paging animation is complete                      |
 | onRemove       | Called whenever a Glider.js animation is complete                             |
 | onSlideVisible | Called whenever a slide a shown. Passed an object containing the slide index  |

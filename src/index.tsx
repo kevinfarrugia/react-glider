@@ -213,6 +213,12 @@ const GliderComponent = React.forwardRef(
     const prevBtnId = `glider-prev-${autoId}`;
     const dotsId = `dots-${autoId}`;
 
+    const [isReady, setIsReady] = React.useState(typeof autoId !== 'undefined');
+
+    React.useEffect(() => {
+      setIsReady(true);
+    }, [id]);
+
     const makeGliderOptions: () => Glider.Options = React.useCallback(
       () => ({
         ...restProps,
@@ -240,7 +246,7 @@ const GliderComponent = React.forwardRef(
     React.useLayoutEffect(() => {
       const { current } = innerRef;
 
-      if (current) {
+      if (current && isReady) {
         if (!gliderRef.current) {
           const glider = new Glider(
             current,
@@ -249,6 +255,15 @@ const GliderComponent = React.forwardRef(
 
           gliderRef.current = glider;
 
+          if (onLoad) {
+            onLoad.call(
+              glider,
+              new CustomEvent('glider-loaded', {
+                detail: { target: innerRef.current },
+              })
+            );
+          }
+
           if (scrollToSlide) {
             glider.scrollItem(scrollToSlide - 1);
           } else if (scrollToPage) {
@@ -256,7 +271,7 @@ const GliderComponent = React.forwardRef(
           }
         }
       }
-    }, [makeGliderOptions, scrollToPage, scrollToSlide]);
+    }, [makeGliderOptions, scrollToPage, scrollToSlide, isReady, onLoad]);
 
     // remove event listeners when props change
     React.useEffect(() => {
@@ -273,7 +288,6 @@ const GliderComponent = React.forwardRef(
         };
 
         removeEventListener('glider-slide-visible', onSlideVisible);
-        removeEventListener('glider-loaded', onLoad);
         removeEventListener('glider-animated', onAnimated);
         removeEventListener('glider-remove', onRemove);
         removeEventListener('glider-refresh', onRefresh);
@@ -285,7 +299,6 @@ const GliderComponent = React.forwardRef(
       onAdd,
       onAnimated,
       onDestroy,
-      onLoad,
       onRefresh,
       onRemove,
       onSlideHidden,
@@ -307,7 +320,6 @@ const GliderComponent = React.forwardRef(
         };
 
         addEventListener('glider-slide-visible', onSlideVisible);
-        addEventListener('glider-loaded', onLoad);
         addEventListener('glider-animated', onAnimated);
         addEventListener('glider-remove', onRemove);
         addEventListener('glider-refresh', onRefresh);
@@ -319,7 +331,6 @@ const GliderComponent = React.forwardRef(
       onAdd,
       onAnimated,
       onDestroy,
-      onLoad,
       onRefresh,
       onRemove,
       onSlideHidden,
@@ -328,11 +339,11 @@ const GliderComponent = React.forwardRef(
 
     // when the props update, update the glider
     React.useEffect(() => {
-      if (gliderRef.current) {
+      if (gliderRef.current && isReady) {
         gliderRef.current.setOption(makeGliderOptions(), true);
         gliderRef.current.refresh(true);
       }
-    }, [makeGliderOptions]);
+    }, [makeGliderOptions, isReady]);
 
     React.useEffect(() => {
       const { current } = gliderRef;

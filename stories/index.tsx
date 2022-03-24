@@ -66,6 +66,7 @@ storiesOf('Glider', module)
   ))
   .add('Single Item', () => (
     <Glider
+      id="random-id"
       draggable
       hasArrows
       hasDots
@@ -297,8 +298,8 @@ storiesOf('Glider', module)
       onRefresh={() => {
         console.log('Refresh');
       }}
-      onLoad={() => {
-        console.log('Loaded');
+      onLoad={(e) => {
+        console.log('Loaded', e.detail);
       }}
     >
       <Pane>1</Pane>
