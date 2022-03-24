@@ -1,3 +1,15 @@
+# v3.1.0 (Thu Mar 24 2022)
+
+#### 🚀 Enhancement
+
+- Fire onLoad event when Glider is initialized [#113](https://github.com/hipstersmoothie/react-glider/pull/113) ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+#### Authors: 1
+
+- Kevin Farrugia ([@kevinfarrugia](https://github.com/kevinfarrugia))
+
+---
+
 # v3.0.5 (Wed Mar 02 2022)
 
 #### 🐛 Bug Fix
