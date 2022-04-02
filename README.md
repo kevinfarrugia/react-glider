@@ -135,6 +135,48 @@ arrows={{
 
 _Note that `React.useRef` will assign a value to `current` after the component has rendered. This means that on the first render, `current` is null._
 
+### Responsive mode
+
+You are able to set different settings for different viewport widths.
+
+```
+<Glider
+  slidesToShow={1}
+  scrollLock
+  responsive={[
+    {
+      breakpoint: 864,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+  ]}
+>
+  {* ... *}
+</Glider>
+```
+
+_Note that React Glider is designed to be mobile-first, so the order of your breakpoints should be small-to-large._
+
+### Container element
+
+If you would like to use a custom element or React component as the parent for your slides, you can use the `containerElement` property.
+
+```
+function ContainerElement({ children }) {
+  return <div className={styles.glider}>{children}</div>;
+}
+
+function MyComponent() {
+  return <Glider
+    slidesToShow={1}
+    containerElement={ContainerElement}
+  >
+    {* ... *}
+  </Glider>
+}
+```
+
 ### Events
 
 | Event          | Description                                                                   |
