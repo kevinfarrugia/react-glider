@@ -41,19 +41,19 @@ import 'glider-js/glider.min.css';
 
 ### CSS
 
-To use the CSS for Glider.js in your app either include the CSS file in your head:
+To use the CSS for Glider.js, you may import it from the `npm` module:
+
+```js
+import 'glider-js/glider.min.css';
+```
+
+or reference the CSS file in your `<head>` (not recommended):
 
 ```html
 <link
   rel="stylesheet"
-  href="https://unpkg.com/glider-js@1.6.0/glider.min.css"
+  href="https://unpkg.com/glider-js@1.7.7/glider.min.css"
 />
-```
-
-or import it into your project from the `npm` module.
-
-```js
-import 'glider-js/glider.min.css';
 ```
 
 #### Demo Defaults
@@ -139,7 +139,7 @@ _Note that `React.useRef` will assign a value to `current` after the component h
 
 You are able to set different settings for different viewport widths.
 
-```
+```jsx
 <Glider
   slidesToShow={1}
   scrollLock
@@ -162,7 +162,7 @@ _Note that React Glider is designed to be mobile-first, so the order of your bre
 
 If you would like to use a custom element or React component as the parent for your slides, you can use the `containerElement` property.
 
-```
+```jsx
 function ContainerElement({ children }) {
   return <div className={styles.glider}>{children}</div>;
 }
@@ -238,7 +238,29 @@ If you are interested in migrating from [`react-slick`](https://www.npmjs.com/pa
 
 ### Can I customize the appearance of the dots/pagination elements?
 
-You may customize the dots using CSS and the `.glider-dots` and `glider-dot` CSS selectors. Alternatively, you may link an external DOM element as the pagination element using the `dots` property.
+You may customize the dots by overriding the CSS for `.glider-dots` and `glider-dot`.
+
+Alternatively, you may pass a CSS selector to the `dots` property to assign a DOM element as the container for the Glider's pagination. This allows you to override the CSS for `.glider-dots` using CSS specificity.
+
+```
+.my-dots-container.glider-dots {
+  /* ... */
+}
+```
+
+This is also possible when using CSS modules and allows you to have multiple Glider components on the same page, each with different styles.
+
+```jsx
+<div className={styles.banner}>
+  <Glider
+    dots={`.${style.dots}`}
+    slidesToShow={1}
+  >
+    {* ... *}
+  </Glider>
+  <div className={style.dots} />
+</div>
+```
 
 ### Can I lazyload images on inactive slides?
 
@@ -254,36 +276,6 @@ As `react-glider` is a wrapper for `Glider.js`, it should run on all modern brow
 yarn
 yarn storybook
 ```
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="http://hipstersmoothie.com/"><img src="https://avatars3.githubusercontent.com/u/1192452?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrew Lisowski</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=hipstersmoothie" title="Code">💻</a> <a href="#design-hipstersmoothie" title="Design">🎨</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=hipstersmoothie" title="Documentation">📖</a> <a href="#infra-hipstersmoothie" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-hipstersmoothie" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="http://bitnoi.se/"><img src="https://avatars1.githubusercontent.com/u/156628?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adam Misiorny</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=adam187" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/zeelMT"><img src="https://avatars1.githubusercontent.com/u/35482746?v=4?s=100" width="100px;" alt=""/><br /><sub><b>zeelMT</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=zeelMT" title="Code">💻</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=zeelMT" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/vinkodlak"><img src="https://avatars2.githubusercontent.com/u/24816470?v=4?s=100" width="100px;" alt=""/><br /><sub><b>vinkodlak</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=vinkodlak" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/stanislavvasilyev-sravni"><img src="https://avatars2.githubusercontent.com/u/60090959?v=4?s=100" width="100px;" alt=""/><br /><sub><b>stanislavvasilyev-sravni</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=stanislavvasilyev-sravni" title="Code">💻</a></td>
-    <td align="center"><a href="https://imkev.dev/"><img src="https://avatars1.githubusercontent.com/u/8075326?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kevin Farrugia</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=kevinfarrugia" title="Code">💻</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=kevinfarrugia" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/hotscotch92"><img src="https://avatars1.githubusercontent.com/u/47922069?v=4?s=100" width="100px;" alt=""/><br /><sub><b>hotscotch92</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=hotscotch92" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="http://mshaaban.com/"><img src="https://avatars.githubusercontent.com/u/6163988?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Moe Shaaban</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=mshaaban0" title="Documentation">📖</a> <a href="https://github.com/hipstersmoothie/react-glider/commits?author=mshaaban0" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.drivenow.com.au/"><img src="https://avatars.githubusercontent.com/u/672405?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cameron Braid</b></sub></a><br /><a href="https://github.com/hipstersmoothie/react-glider/commits?author=cameronbraid" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ## License and Copyright
 
