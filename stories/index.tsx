@@ -57,11 +57,14 @@ storiesOf('Glider', module)
       itemWidth={number('itemWidth', 0)}
       duration={number('duration', 0.5)}
       className="gradient-outline"
+      skipTrack
     >
-      <Pane style={{ height: 'auto', width: 756 }}>1</Pane>
-      <Pane style={{ height: 'auto', width: 756 }}>2</Pane>
-      <Pane style={{ height: 'auto', width: 756 }}>3</Pane>
-      <Pane style={{ height: 'auto', width: 756 }}>4</Pane>
+      <div className="glider-track">
+        <Pane style={{ minWidth: '100%' }}>1</Pane>
+        <Pane style={{ minWidth: '100%' }}>2</Pane>
+        <Pane style={{ minWidth: '100%' }}>3</Pane>
+        <Pane style={{ minWidth: '100%' }}>4</Pane>
+      </div>
     </Glider>
   ))
   .add('Single Item', () => (
@@ -72,19 +75,22 @@ storiesOf('Glider', module)
       hasDots
       slidesToShow={1}
       className="gradient-outline"
+      skipTrack
     >
-      <Pane>1</Pane>
-      <Pane>2</Pane>
-      <Pane>3</Pane>
-      <Pane>4</Pane>
-      <Pane>5</Pane>
-      <Pane>6</Pane>
-      <Pane>7</Pane>
-      <Pane>8</Pane>
-      <Pane>9</Pane>
-      <Pane>10</Pane>
-      <Pane>11</Pane>
-      <Pane>12</Pane>
+      <div className="glider-track">
+        <Pane>1</Pane>
+        <Pane>2</Pane>
+        <Pane>3</Pane>
+        <Pane>4</Pane>
+        <Pane>5</Pane>
+        <Pane>6</Pane>
+        <Pane>7</Pane>
+        <Pane>8</Pane>
+        <Pane>9</Pane>
+        <Pane>10</Pane>
+        <Pane>11</Pane>
+        <Pane>12</Pane>
+      </div>
     </Glider>
   ))
   .add('Multiple Item', () => (
