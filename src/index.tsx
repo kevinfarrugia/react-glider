@@ -168,7 +168,6 @@ type GliderOptions = Pick<
   | 'draggable'
   | 'dragVelocity'
   | 'duration'
-  | 'skipTrack'
 >;
 
 export interface GliderMethods {
@@ -243,7 +242,7 @@ const GliderComponent = React.forwardRef(
     );
 
     // initialize the glider
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
       const { current } = innerRef;
 
       if (current && isReady) {
@@ -373,7 +372,7 @@ const GliderComponent = React.forwardRef(
           </button>
         )}
 
-        <div id={autoId} className={className} ref={innerRef}>
+        <div id={autoId} className={`glider ${className}`} ref={innerRef}>
           {children}
         </div>
 
