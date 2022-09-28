@@ -1,29 +1,31 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
-import * as React from 'react';
-import { storiesOf, DecoratorFn } from '@storybook/react';
-import { withKnobs, number, boolean } from '@storybook/addon-knobs';
+import * as React from "react";
+import { storiesOf, DecoratorFn } from "@storybook/react";
+import { withKnobs, number, boolean } from "@storybook/addon-knobs";
 
-import '../glider.defaults.css';
+import "../glider.defaults.css";
 // eslint-disable-next-line import/extensions
-import Glider, { GliderMethods } from '../src';
+import Glider, { GliderMethods } from "../src";
 
 const styles = {
-  width: '80%',
-  margin: 'auto',
+  width: "80%",
+  margin: "auto",
 };
 
 const Wrapper = ({ children, style }) => (
   <div style={style || styles}>{children}</div>
 );
 
-const createDummyPage = (style?: object): DecoratorFn => (storyFn) => {
-  if (process.env.NODE_ENV === 'test') {
-    return <div>{storyFn()}</div>;
-  }
+const createDummyPage =
+  (style?: object): DecoratorFn =>
+  (storyFn) => {
+    if (process.env.NODE_ENV === "test") {
+      return <div>{storyFn()}</div>;
+    }
 
-  return <Wrapper style={style}>{storyFn()}</Wrapper>;
-};
+    return <Wrapper style={style}>{storyFn()}</Wrapper>;
+  };
 
 interface PaneProps {
   children: React.ReactNode;
@@ -32,39 +34,39 @@ interface PaneProps {
 }
 
 const Pane: React.FC<PaneProps> = ({ children, style, className }) => (
-  <div className={`glider-slide ${className || ''}`} style={style}>
+  <div className={`glider-slide ${className || ""}`} style={style}>
     <h1>{children}</h1>
   </div>
 );
 
-storiesOf('Glider', module)
+storiesOf("Glider", module)
   .addDecorator(createDummyPage())
   .addDecorator(withKnobs)
-  .add('Playground', () => (
+  .add("Playground", () => (
     <Glider
-      draggable={boolean('draggable', false)}
-      dragVelocity={number('dragVelocity', 3.3)}
-      propagateEvent={boolean('propagateEvent', true)}
-      scrollLock={boolean('scrollLock', false)}
-      scrollLockDelay={number('scrollLockDelay', 250)}
-      scrollPropagate={boolean('scrollPropagate', false)}
-      hasArrows={boolean('hasArrows', false)}
-      hasDots={boolean('hasDots', false)}
-      scrollToSlide={number('scrollToSlide', 0)}
-      scrollToPage={number('scrollToSlide', 0)}
-      slidesToShow={number('slidesToShow', 1)}
-      slidesToScroll={number('slidesToScroll', 1)}
-      itemWidth={number('itemWidth', 0)}
-      duration={number('duration', 0.5)}
+      draggable={boolean("draggable", false)}
+      dragVelocity={number("dragVelocity", 3.3)}
+      propagateEvent={boolean("propagateEvent", true)}
+      scrollLock={boolean("scrollLock", false)}
+      scrollLockDelay={number("scrollLockDelay", 250)}
+      scrollPropagate={boolean("scrollPropagate", false)}
+      hasArrows={boolean("hasArrows", false)}
+      hasDots={boolean("hasDots", false)}
+      scrollToSlide={number("scrollToSlide", 0)}
+      scrollToPage={number("scrollToSlide", 0)}
+      slidesToShow={number("slidesToShow", 1)}
+      slidesToScroll={number("slidesToScroll", 1)}
+      itemWidth={number("itemWidth", 0)}
+      duration={number("duration", 0.5)}
       className="gradient-outline"
     >
-      <Pane style={{ height: 'auto', width: 756 }}>1</Pane>
-      <Pane style={{ height: 'auto', width: 756 }}>2</Pane>
-      <Pane style={{ height: 'auto', width: 756 }}>3</Pane>
-      <Pane style={{ height: 'auto', width: 756 }}>4</Pane>
+      <Pane style={{ height: "auto", width: 756 }}>1</Pane>
+      <Pane style={{ height: "auto", width: 756 }}>2</Pane>
+      <Pane style={{ height: "auto", width: 756 }}>3</Pane>
+      <Pane style={{ height: "auto", width: 756 }}>4</Pane>
     </Glider>
   ))
-  .add('Single Item', () => (
+  .add("Single Item", () => (
     <Glider
       id="random-id"
       draggable
@@ -87,7 +89,7 @@ storiesOf('Glider', module)
       <Pane>12</Pane>
     </Glider>
   ))
-  .add('Multiple Item', () => (
+  .add("Multiple Item", () => (
     <Glider
       draggable
       hasArrows
@@ -110,7 +112,7 @@ storiesOf('Glider', module)
       <Pane>12</Pane>
     </Glider>
   ))
-  .add('Responsive Settings / Scroll Lock Support', () => (
+  .add("Responsive Settings / Scroll Lock Support", () => (
     <Glider
       hasArrows
       hasDots
@@ -122,8 +124,8 @@ storiesOf('Glider', module)
         {
           breakpoint: 775,
           settings: {
-            slidesToShow: 'auto',
-            slidesToScroll: 'auto',
+            slidesToShow: "auto",
+            slidesToScroll: "auto",
             itemWidth: 150,
             duration: 0.25,
           },
@@ -144,7 +146,7 @@ storiesOf('Glider', module)
       <Pane>12</Pane>
     </Glider>
   ))
-  .add('Fractional Slides', () => (
+  .add("Fractional Slides", () => (
     <Glider
       draggable
       hasArrows
@@ -168,7 +170,7 @@ storiesOf('Glider', module)
     </Glider>
   ))
   .add(
-    'Perspective View',
+    "Perspective View",
     () => (
       <Glider
         draggable
@@ -218,18 +220,18 @@ storiesOf('Glider', module)
     ),
     {
       notes:
-        'The CSS for this is not included in glider.js or this package. You can find it in .storybook/preview-head.html in the style tag. Please do not file bugs as I do not want to support this.',
+        "The CSS for this is not included in glider.js or this package. You can find it in .storybook/preview-head.html in the style tag. Please do not file bugs as I do not want to support this.",
     }
   )
-  .add('Scroll to specific slides or pages', () => (
+  .add("Scroll to specific slides or pages", () => (
     <Glider
       draggable
       hasArrows
       hasDots
       slidesToShow={5.5}
       slidesToScroll={1}
-      scrollToSlide={number('scrollToSlide', 5)}
-      scrollToPage={number('scrollToPage', 0)}
+      scrollToSlide={number("scrollToSlide", 5)}
+      scrollToPage={number("scrollToPage", 0)}
       className="gradient-outline"
     >
       <Pane>1</Pane>
@@ -246,7 +248,7 @@ storiesOf('Glider', module)
       <Pane>12</Pane>
     </Glider>
   ))
-  .add('Ref Exposes Glider Methods', () => {
+  .add("Ref Exposes Glider Methods", () => {
     const gliderRef = React.useRef<GliderMethods>();
 
     return (
@@ -261,8 +263,8 @@ storiesOf('Glider', module)
           slidesToShow={5.5}
           slidesToScroll={1}
           ref={gliderRef}
-          scrollToSlide={number('scrollToSlide', 5)}
-          scrollToPage={number('scrollToPage', 0)}
+          scrollToSlide={number("scrollToSlide", 5)}
+          scrollToPage={number("scrollToPage", 0)}
           className="gradient-outline"
         >
           <Pane>1</Pane>
@@ -281,7 +283,7 @@ storiesOf('Glider', module)
       </>
     );
   })
-  .add('Custom Events', () => (
+  .add("Custom Events", () => (
     <Glider
       draggable
       hasArrows
@@ -290,16 +292,16 @@ storiesOf('Glider', module)
       slidesToShow={5}
       className="gradient-outline"
       onSlideVisible={(e) => {
-        console.log('Slide Visible %s', e.detail.slide);
+        console.log("Slide Visible %s", e.detail.slide);
       }}
       onSlideHidden={(e) => {
-        console.log('Slide Hidden %s', e.detail.slide);
+        console.log("Slide Hidden %s", e.detail.slide);
       }}
       onRefresh={() => {
-        console.log('Refresh');
+        console.log("Refresh");
       }}
       onLoad={(e) => {
-        console.log('Loaded', e.detail);
+        console.log("Loaded", e.detail);
       }}
     >
       <Pane>1</Pane>
@@ -316,7 +318,7 @@ storiesOf('Glider', module)
       <Pane>12</Pane>
     </Glider>
   ))
-  .add('Multiple Gliders', () => (
+  .add("Multiple Gliders", () => (
     <>
       <Glider
         draggable
@@ -339,8 +341,8 @@ storiesOf('Glider', module)
         slidesToShow={1}
         className="gradient-outline"
         arrows={{
-          prev: '#buttonPrev',
-          next: '#buttonNext',
+          prev: "#buttonPrev",
+          next: "#buttonNext",
         }}
       >
         <Pane>1</Pane>
@@ -348,7 +350,7 @@ storiesOf('Glider', module)
         <Pane>3</Pane>
         <Pane>4</Pane>
       </Glider>
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: "relative" }}>
         <button
           id="buttonPrev"
           type="button"
@@ -378,7 +380,7 @@ storiesOf('Glider', module)
       </div>
     </>
   ))
-  .add('Custom Element Arrows', () => {
+  .add("Custom Element Arrows", () => {
     const leftArrowEl = React.useRef<HTMLButtonElement>(null);
     const rightArrowEl = React.useRef<HTMLButtonElement>(null);
     const [isInitialized, setIsInitialized] = React.useState(false);
@@ -407,7 +409,7 @@ storiesOf('Glider', module)
             <Pane>4</Pane>
           </Glider>
         )}
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: "relative" }}>
           <button
             ref={leftArrowEl}
             type="button"
@@ -441,7 +443,7 @@ storiesOf('Glider', module)
       </>
     );
   })
-  .add('Unmounting & remounting', () => {
+  .add("Unmounting & remounting", () => {
     const [isVisible, setIsVisible] = React.useState(false);
 
     return (
@@ -481,7 +483,7 @@ storiesOf('Glider', module)
       </div>
     );
   })
-  .add('Updating props', () => {
+  .add("Updating props", () => {
     const [slidesToShow, setSlidesToShow] = React.useState(1);
 
     return (
