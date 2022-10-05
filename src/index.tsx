@@ -35,9 +35,6 @@ const GliderComponent = React.forwardRef(
     const dotsRef = React.useRef<HTMLDivElement>(null);
     const innerRef = React.useRef<HTMLDivElement>(null);
     const gliderRef = React.useRef<GliderMethods>();
-    // const nextBtnId = `glider-next-${autoId}`;
-    // const prevBtnId = `glider-prev-${autoId}`;
-    // const dotsId = `dots-${autoId}`;
 
     const makeGliderOptions: () => Glider.Options = React.useCallback(
       () => ({
