@@ -12,7 +12,7 @@ async function copy() {
     copyFile("docs/theme.css", "build/theme.css"),
     copyFile("docs/perspective.css", "build/perspective.css"),
     copyFile("docs/index.html", "build/index.html"),
-    copyDir("docs/img", "docs/img"),
+    copyDir("docs/img", "build/img"),
   ]);
 
   if (process.argv.includes("--watch")) {
