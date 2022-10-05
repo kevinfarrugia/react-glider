@@ -7,6 +7,10 @@ const format = require("./lib/time");
 async function copy() {
   await makeDir("build");
   await Promise.all([
+    copyFile("docs/glider.css", "build/glider.css"),
+    copyFile("docs/style.css", "build/style.css"),
+    copyFile("docs/theme.css", "build/theme.css"),
+    copyFile("docs/perspective.css", "build/perspective.css"),
     copyFile("docs/index.html", "build/index.html"),
     copyDir("docs/img", "docs/img"),
   ]);
@@ -19,12 +23,14 @@ async function copy() {
       const src = path.relative("./", filePath);
       const dist = path.join(
         "build/",
-        src.startsWith("src") ? path.relative("src", src) : src
+        src.startsWith("docs") ? path.relative("docs", src) : src
       );
       switch (event) {
         case "add":
         case "change":
           await makeDir(path.dirname(dist));
+          // eslint-disable-next-line no-console
+          console.log(filePath, dist);
           await copyFile(filePath, dist);
           break;
         case "unlink":

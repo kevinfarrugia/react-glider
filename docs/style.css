@@ -1,0 +1,114 @@
+/* generic styles for demo */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Nunito Sans, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5em;
+  font-size: 16px;
+}
+
+a,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1 {
+  color: #fff;
+}
+
+footer {
+  background-color: #32333f;
+  color: #fff;
+  padding: 2em 0 1em;
+  text-align: center;
+  font-size: 0.875em;
+}
+
+.hero {
+  padding: 2em;
+  background-image: linear-gradient(to right, #51089f 0%,#7f1cc5 30%, #cd88e5 100%);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.content {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+pre {
+  background-color: #333;
+  border-radius: 4px;
+  color: #f8f8f2;
+  font-size: 0.875em;
+  line-height: 1.5;
+  overflow: auto;
+  padding: 0.625em;
+  text-align: left;
+  white-space: break-spaces;
+  word-break: break-all;
+}
+
+summary {
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 3em 0;
+  gap: 1em;
+}
+
+.button,
+.button:visited {
+  border: 0;
+  border-radius: 4px;
+  padding: 0.5em 0.75em;
+  background: rgba(255, 255, 255, 0.89);
+  color: #333;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(200, 200, 200, 0.25);
+  box-shadow: 0 0 1px rgba(200, 200, 200, 0.25);
+}
+
+.app {
+  padding: 1em 0;
+  background-image: linear-gradient(to right, #51089f 0%,#7f1cc5 30%, #cd88e5 100%);
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 72em;
+  margin: 0 auto;
+}
+
+.demos {
+  background-color: #fff;
+  padding: 1em;
+  margin: 2em 1em;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.item {
+  margin-top: 2em;
+  border-top: 1px solid #f0f0f0;
+}
+
+.item:first-child {
+  border-top: 0;
+}

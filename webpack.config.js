@@ -4,7 +4,7 @@ module.exports = {
   mode: "development",
   devtool: "source-map",
   entry: {
-    "index.js": "./docs/index.js",
+    "index.js": "./docs/index.tsx",
   },
   output: {
     path: path.join(__dirname, "build"),
@@ -13,7 +13,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.css/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.jsx?|\.tsx?/,
         exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
@@ -28,6 +32,7 @@ module.exports = {
                 },
               ],
               ["@babel/preset-react", { development: true }],
+              ["@babel/preset-typescript"],
             ],
           },
         },
@@ -35,10 +40,10 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   devServer: {
-    contentBase: path.join(__dirname, "./build"),
+    static: path.join(__dirname, "./build"),
     port: 8080,
     hot: true,
   },

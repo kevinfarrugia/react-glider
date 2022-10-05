@@ -4,12 +4,93 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>react-glider - A ReactJS wrapper for Glider.js</title>
+    <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/glider.css" />
     <link rel="stylesheet" href="/theme.css" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/perspective.css" />
   </head>
   <body>
+    <div class="hero">
+      <h1>React Glider</h1>
+      <p>
+        A
+        <a
+          href="https://reactjs.org/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          React</a
+        >
+        wrapper for
+        <a
+          href="https://github.com/NickPiscitelli/Glider.js/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Glider.js
+        </a>
+      </p>
+      <p class="buttons">
+        <a
+          href="https://npmjs.org/react-glider"
+          class="button npm"
+        >
+          <img
+            width="82"
+            height="32"
+            src="/img/npm.png"
+            style="vertical-align: text-top"
+            alt="npm logo"
+          />
+        </a>
+        <a
+          href="https://github.com/kevinfarrugia/react-glider"
+          class="button github"
+        >
+          <img
+            width="78"
+            height="32"
+            src="/img/github.png"
+            style="vertical-align: text-top"
+            alt="GitHub logo"
+          />
+        </a>
+      </p>
+    </div>
+    <div class="content">
+      <div class="container">
+        <h2>Usage</h2>
+        <pre><code>import Glider from 'react-glider';
+import 'glider-js/glider.min.css';
+
+function MyComponent() {
+  return (
+    &lt;Glider
+      draggable
+      hasArrows
+      hasDots
+      slidesToShow={2}
+      slidesToScroll={1}
+    &gt;
+      &lt;Pane&gt;1&lt;/Pane&gt;
+      &lt;Pane&gt;2&lt;/Pane&gt;
+      &lt;Pane&gt;3&lt;/Pane&gt;
+      &lt;Pane&gt;4&lt;/Pane&gt;
+      &lt;Pane&gt;5&lt;/Pane&gt;
+    &lt;/Glider&gt;
+  );
+}</code></pre>
+      </div>
+    </div>
     <div id="app"></div>
+    <footer>
+      <div>Released under the MIT License</div>
+      <div>
+        Copyright © 2022
+        <a href="https://imkev.dev">Kevin Farrugia</a>
+      </div>
+    </footer>
     <script type="text/javascript" src="/index.js"></script>
   </body>
 </html>

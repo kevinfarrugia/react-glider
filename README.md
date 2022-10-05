@@ -1,10 +1,8 @@
 # react-glider
 
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://kevinfarrugia.github.io/react-glider) [![CircleCI](https://circleci.com/gh/hipstersmoothie/react-glider.svg?style=svg)](https://circleci.com/gh/hipstersmoothie/react-glider) [![Auto Release](https://img.shields.io/badge/release-auto.svg?colorA=888888&colorB=9B065A&label=auto&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACzElEQVR4AYXBW2iVBQAA4O+/nLlLO9NM7JSXasko2ASZMaKyhRKEDH2ohxHVWy6EiIiiLOgiZG9CtdgG0VNQoJEXRogVgZYylI1skiKVITPTTtnv3M7+v8UvnG3M+r7APLIRxStn69qzqeBBrMYyBDiL4SD0VeFmRwtrkrI5IjP0F7rjzrSjvbTqwubiLZffySrhRrSghBJa8EBYY0NyLJt8bDBOtzbEY72TldQ1kRm6otana8JK3/kzN/3V/NBPU6HsNnNlZAz/ukOalb0RBJKeQnykd7LiX5Fp/YXuQlfUuhXbg8Di5GL9jbXFq/tLa86PpxPhAPrwCYaiorS8L/uuPJh1hZFbcR8mewrx0d7JShr3F7pNW4vX0GRakKWVk7taDq7uPvFWw8YkMcPVb+vfvfRZ1i7zqFwjtmFouL72y6C/0L0Ie3GvaQXRyYVB3YZNE32/+A/D9bVLcRB3yw3hkRCdaDUtFl6Ykr20aaLvKoqIXUdbMj6GFzAmdxfWx9iIRrkDr1f27cFONGMUo/gRI/jNbIMYxJOoR1cY0OGaVPb5z9mlKbyJP/EsdmIXvsFmM7Ql42nEblX3xI1BbYbTkXCqRnxUbgzPo4T7sQBNeBG7zbAiDI8nWfZDhQWYCG4PFr+HMBQ6l5VPJybeRyJXwsdYJ/cRnlJV0yB4ZlUYtFQIkMZnst8fRrPcKezHCblz2IInMIkPzbbyb9mW42nWInc2xmE0y61AJ06oGsXL5rcOK1UdCbEXiVwNXsEy/6+EbaiVG8eeEAfxvaoSBnCH61uOD7BS1Ul8ESHBKWxCrdyd6EYNKihgEVrwOAbQruoytuBYIFfAc3gVN6iawhjKyNCEpYhVJXgbOzARyaU4hCtYizq5EI1YgiUoIlT1B7ZjByqmRWYbwtdYjoWoN7+LOIQefIqKawLzK6ID69GGpQgwhhEcwGGUzfEPAiPqsCXadFsAAAAASUVORK5CYII=)](https://github.com/intuit/auto-release)
-
 A [React](https://reactjs.org/) wrapper for [Glider.js](https://github.com/NickPiscitelli/Glider.js/).
 
-### [Demo](https://codesandbox.io/s/react-glider-demo-y5klj) | [Storybook](https://kevinfarrugia.github.io/react-glider/)
+### [Code Sandbox](https://codesandbox.io/s/react-glider-demo-y5klj)
 
 ## Quick Start
 
@@ -31,11 +29,11 @@ import 'glider-js/glider.min.css';
   slidesToShow={2}
   slidesToScroll={1}
 >
-  <Pane>1</Pane>
-  <Pane>2</Pane>
-  <Pane>3</Pane>
-  <Pane>4</Pane>
-  <Pane>5</Pane>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
 </Glider>
 ```
 
@@ -44,7 +42,7 @@ import 'glider-js/glider.min.css';
 To use the CSS for Glider.js, you may import it from the `npm` module:
 
 ```js
-import 'glider-js/glider.min.css';
+import "glider-js/glider.min.css";
 ```
 
 or reference the CSS file in your `<head>` (not recommended):
@@ -61,7 +59,7 @@ or reference the CSS file in your `<head>` (not recommended):
 This package also exposes the CSS used to render the demo which may also be imported as follows:
 
 ```js
-import Glider from 'react-glider/glider.defaults.css';
+import Glider from "react-glider/glider.defaults.css";
 ```
 
 ### Options
@@ -88,15 +86,15 @@ import Glider from 'react-glider/glider.defaults.css';
 | scrollPropagate  | Whether or not to release the scroll events from the container. (default = true)                                                                                                                                                                          |
 | propagateEvent   | Whether or not Glider.js events should bubble (useful for binding events to all carousels). (default = false)                                                                                                                                             |
 | scrollLock       | If true, Glider.js will scroll to the nearest slide after any scroll interactions. (default = false)                                                                                                                                                      |
-| skipTrack        | Whether or not Glider.js should skip wrapping its children with a 'glider-track' <div>. NOTE: If true, Glider.js will assume that the 'glider-track' element has been added manually. All slides must be children of the track element. (default = false) |
+| skipTrack        | Whether or not Glider.js should skip wrapping its children with a 'glider-track' `<div>`. NOTE: If true, Glider.js will assume that the 'glider-track' element has been added manually. All slides must be children of the track element. (default = false) |
 | scrollLockDelay  | How long (ms) to wait after scroll event before locking, if too low, it might interrupt normal scrolling. (default = 250)                                                                                                                                 |
-| responsive       | An object containing custom settings per provided breakpoint. Glider.js breakpoints are mobile-first be conscious of your ordering.                                                                                                                       |
+| responsive       | An object containing custom settings per provided breakpoint. Glider.js breakpoints are mobile-first, be conscious of your ordering. Supported responsive settings are `slidesToShow`, `slidesToScroll`, `itemWidth`, and `duration`.                                   |
 | containerElement | Replace container HTML element.                                                                                                                                                                                                                           |
 | easing           | Use any custom easing function, compatible with most easing plugins.                                                                                                                                                                                      |
 
 ### Arrows
 
-If the Glider component should display arrows, you are are able to configure these using the `arrows` prop.
+If the Glider component should display arrows, you can configure these using the `arrows` prop.
 
 #### Selectors
 
@@ -137,7 +135,7 @@ _Note that `React.useRef` will assign a value to `current` after the component h
 
 ### Responsive mode
 
-You are able to set different settings for different viewport widths.
+You can set different settings for different viewport widths.
 
 ```jsx
 <Glider
@@ -195,8 +193,8 @@ function MyComponent() {
 To get access to the current glider instance this react component exposes a ref.
 
 ```ts
-import React from 'react';
-import Glider, { GliderMethods } from 'react-glider';
+import React from "react";
+import Glider, { GliderMethods } from "react-glider";
 
 const PaneExample: React.FC<PaneProps> = ({ children, style, className }) => (
   <div className={`glider-slide ${className}`} style={style}>
@@ -224,7 +222,7 @@ const example = () => {
 
 ### Perspective View
 
-The CSS for the [perspective view](https://kevinfarrugia.github.io/react-glider/?path=/story/glider--perspective-view) is not included in `Glider.js` or this package. You can find it in [`.storybook/preview-head.html`](https://github.com/hipstersmoothie/react-glider/blob/master/.storybook/preview-head.html) in the `style` tag. Please do not file bugs for it as I do not want to support it.
+The CSS for the [perspective view](https://kevinfarrugia.github.io/react-glider/?path=/story/glider--perspective-view) is not included in `Glider.js` or this package. You can find it in [`perspective.css`](https://github.com/kevinfarrugia/react-glider/blob/master/docs/perspective.css). Please do not file bugs for it as I do not want to support it.
 
 ## FAQs
 
@@ -234,7 +232,7 @@ If you are interested in migrating from [`react-slick`](https://www.npmjs.com/pa
 
 ### How can I remove the eslint warning `import/no-extraneous-dependencies`?
 
-[`import/no-extraneous-dependencies`](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md) requires that all dependencies are included in the project's `package.json` file. Since the CSS file is generated by `glider-js`, it will not be listed in your `package.json` file. The preferred option would be to create a local CSS file containing the [`glider.css`](https://github.com/NickPiscitelli/Glider.js/blob/master/glider.css) file's contents. Alternatively, you may disable the eslint warning for that line. We do not recommend installing `glider-js` as a dependency in your package as you would then be responsible for maintainining the `glider-js` and `react-glider` dependencies in your project.
+[`import/no-extraneous-dependencies`](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md) requires that all dependencies are included in the project's `package.json` file. Since the CSS file is generated by `glider-js`, it will not be listed in your `package.json` file. The preferred option would be to create a local CSS file containing the [`glider.css`](https://github.com/NickPiscitelli/Glider.js/blob/master/glider.css) file's contents. Alternatively, you may disable the eslint warning for that line. We do not recommend installing `glider-js` as a dependency in your package as you would then be responsible for maintaining the `glider-js` and `react-glider` dependencies in your project.
 
 ### Can I customize the appearance of the dots/pagination elements?
 
@@ -264,7 +262,7 @@ This is also possible when using CSS modules and allows you to have multiple Gli
 
 ### Can I lazyload images on inactive slides?
 
-The recommend approach for lazy loading images is to use the browser's `loading="lazy"` implementation.
+The recommended approach for lazy loading images is to use the browser's `loading="lazy"` implementation. You can use the slide's index to know which images should have the attribute set.
 
 ### Which browsers are supported?
 
@@ -274,9 +272,9 @@ As `react-glider` is a wrapper for `Glider.js`, it should run on all modern brow
 
 ```sh
 yarn
-yarn storybook
+yarn dev
 ```
 
 ## License and Copyright
 
-This software is released under the terms of the [MIT license](https://github.com/hipstersmoothie/react-glider/blob/master/LICENSE).
+This software is released under the terms of the [MIT license](https://github.com/kevinfarrugia/react-glider/blob/master/LICENSE).
