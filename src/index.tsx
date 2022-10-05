@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useId } from "@reach/auto-id";
 import Glider from "glider-js";
 import { GliderProps, GliderMethods } from "./types";
 
@@ -29,47 +28,36 @@ const GliderComponent = React.forwardRef(
       ...restProps
     } = props;
 
+    const autoId = React.useId();
+
+    const prevButtonRef = React.useRef<HTMLButtonElement>(null);
+    const nextButtonRef = React.useRef<HTMLButtonElement>(null);
+    const dotsRef = React.useRef<HTMLDivElement>(null);
     const innerRef = React.useRef<HTMLDivElement>(null);
     const gliderRef = React.useRef<GliderMethods>();
-    const autoId = useId(id);
-    const nextBtnId = `glider-next-${autoId}`;
-    const prevBtnId = `glider-prev-${autoId}`;
-    const dotsId = `dots-${autoId}`;
-
-    const [isReady, setIsReady] = React.useState(typeof autoId !== "undefined");
-
-    React.useEffect(() => {
-      setIsReady(true);
-    }, [id]);
+    // const nextBtnId = `glider-next-${autoId}`;
+    // const prevBtnId = `glider-prev-${autoId}`;
+    // const dotsId = `dots-${autoId}`;
 
     const makeGliderOptions: () => Glider.Options = React.useCallback(
       () => ({
         ...restProps,
         arrows:
           (hasArrows && {
-            next: (arrows && arrows.next) || `#${nextBtnId}`,
-            prev: (arrows && arrows.prev) || `#${prevBtnId}`,
+            next: (arrows && arrows.next) || nextButtonRef.current,
+            prev: (arrows && arrows.prev) || prevButtonRef.current,
           }) ||
           undefined,
-        dots: (hasDots && dots) || `#${dotsId}` || undefined,
+        dots: (hasDots && dots) || dotsRef.current || undefined,
       }),
-      [
-        restProps,
-        hasArrows,
-        arrows,
-        nextBtnId,
-        prevBtnId,
-        hasDots,
-        dots,
-        dotsId,
-      ]
+      [restProps, hasArrows, arrows, hasDots, dots]
     );
 
     // initialize the glider
     React.useLayoutEffect(() => {
       const { current } = innerRef;
 
-      if (current && isReady) {
+      if (current) {
         if (!gliderRef.current) {
           const glider = new Glider(
             current,
@@ -94,7 +82,7 @@ const GliderComponent = React.forwardRef(
           }
         }
       }
-    }, [makeGliderOptions, scrollToPage, scrollToSlide, isReady, onLoad]);
+    }, [makeGliderOptions, scrollToPage, scrollToSlide, onLoad]);
 
     // remove event listeners when props change
     React.useEffect(() => {
@@ -162,11 +150,11 @@ const GliderComponent = React.forwardRef(
 
     // when the props update, update the glider
     React.useEffect(() => {
-      if (gliderRef.current && isReady) {
+      if (gliderRef.current) {
         gliderRef.current.setOption(makeGliderOptions(), true);
         gliderRef.current.refresh(true);
       }
-    }, [makeGliderOptions, isReady]);
+    }, [makeGliderOptions]);
 
     React.useEffect(() => {
       const { current } = gliderRef;
@@ -190,24 +178,24 @@ const GliderComponent = React.forwardRef(
             type="button"
             className="glider-prev"
             aria-label="Previous"
-            id={prevBtnId}
+            ref={prevButtonRef}
           >
             {iconLeft || "«"}
           </button>
         )}
 
-        <div id={autoId} className={className} ref={innerRef}>
+        <div id={id || autoId} className={className} ref={innerRef}>
           {children}
         </div>
 
-        {hasDots && !dots && <div id={dotsId} />}
+        {hasDots && !dots && <div ref={dotsRef} />}
 
         {props.hasArrows && !arrows && (
           <button
             type="button"
             className="glider-next"
             aria-label="Next"
-            id={nextBtnId}
+            ref={nextButtonRef}
           >
             {iconRight || "»"}
           </button>

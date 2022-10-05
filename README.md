@@ -1,8 +1,8 @@
 # react-glider
 
-A [React](https://reactjs.org/) wrapper for [Glider.js](https://github.com/NickPiscitelli/Glider.js/).
+A [ReactJS](https://reactjs.org/) wrapper for [Glider.js](https://github.com/NickPiscitelli/Glider.js/).
 
-### [Code Sandbox](https://codesandbox.io/s/react-glider-demo-y5klj)
+### [Demo](https://react-glider.vercel.app/) | ### [Code Sandbox](https://codesandbox.io/s/react-glider-demo-y5klj)
 
 ## Quick Start
 
