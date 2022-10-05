@@ -29,6 +29,7 @@ function AutoplayGlider() {
     () => () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
+        intervalRef.current = null;
       }
     },
     []
