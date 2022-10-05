@@ -6,7 +6,6 @@ function FractionalSlidesGlider() {
   return (
     <div className="container">
       <Glider
-        id="fractional-glider"
         className="glider-container"
         draggable
         hasArrows
@@ -55,7 +54,6 @@ function FractionalSlidesGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="fractional-glider"
   className="glider-container"
   draggable
   hasArrows

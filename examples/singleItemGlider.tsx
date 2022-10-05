@@ -6,7 +6,6 @@ function SingleItemGlider() {
   return (
     <div className="container">
       <Glider
-        id="simple-glider"
         className="glider-container"
         draggable
         hasDots
@@ -54,7 +53,6 @@ function SingleItemGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="simple-glider"
   className="glider-container"
   draggable
   hasDots

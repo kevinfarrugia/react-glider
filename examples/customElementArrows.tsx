@@ -15,7 +15,6 @@ function CustomElementArrowsGlider() {
     <div className="container">
       {isInitialized && (
         <Glider
-          id="custom-arrows-glider"
           className="glider-container"
           draggable
           hasDots
@@ -97,7 +96,6 @@ function CustomElementArrowsGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="custom-arrows-glider"
   className="glider-container"
   draggable
   hasDots

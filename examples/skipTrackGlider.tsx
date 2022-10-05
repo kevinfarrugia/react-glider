@@ -6,7 +6,6 @@ function SkipTrackGlider() {
   return (
     <div className="container">
       <Glider
-        id="skip-track-glider"
         className="glider-container"
         draggable
         hasDots
@@ -56,7 +55,6 @@ function SkipTrackGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="skip-track-glider"
   className="glider-container"
   draggable
   hasDots

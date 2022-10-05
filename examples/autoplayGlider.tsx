@@ -37,7 +37,6 @@ function AutoplayGlider() {
   return (
     <div className="container">
       <Glider
-        id="autoplay-glider"
         className="glider-container"
         draggable
         hasDots
@@ -114,7 +113,6 @@ React.useEffect(
 
 return (
   <Glider
-    id="autoplay-glider"
     className="glider-container"
     draggable
     hasDots

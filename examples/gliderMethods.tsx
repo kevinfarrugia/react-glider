@@ -17,7 +17,6 @@ function RefGlider() {
         Scroll to random item
       </button>
       <Glider
-        id="ref-glider"
         className="glider-container"
         draggable
         hasDots
@@ -78,7 +77,6 @@ return (
     Scroll to random item
   </button>
   <Glider
-    id="ref-glider"
     className="glider-container"
     draggable
     hasDots

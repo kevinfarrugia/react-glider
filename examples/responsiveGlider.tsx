@@ -6,7 +6,6 @@ function ResponsiveGlider() {
   return (
     <div className="container">
       <Glider
-        id="responsive-glider"
         className="glider-container"
         hasArrows
         hasDots
@@ -65,7 +64,6 @@ function ResponsiveGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="responsive-glider"
   className="glider-container"
   hasArrows
   hasDots

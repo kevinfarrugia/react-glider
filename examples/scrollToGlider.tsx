@@ -6,7 +6,6 @@ function ScrollToGlider() {
   return (
     <div className="container">
       <Glider
-        id="scroll-item-glider"
         className="glider-container"
         draggable
         hasDots
@@ -55,7 +54,6 @@ function ScrollToGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="scroll-item-glider"
   className="glider-container"
   draggable
   hasDots

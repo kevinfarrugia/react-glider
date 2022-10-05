@@ -18,7 +18,6 @@ function UpdatingPropsGlider() {
         <option>4</option>
       </select>
       <Glider
-        id="updating-props-glider"
         className="glider-container"
         draggable
         hasDots
@@ -66,7 +65,6 @@ function UpdatingPropsGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="updating-props-glider"
   className="glider-container"
   draggable
   hasDots

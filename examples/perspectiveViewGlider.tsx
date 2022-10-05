@@ -6,7 +6,6 @@ function PerspectiveViewGlider() {
   return (
     <div className="container">
       <Glider
-        id="perspective-glider"
         className="glider-perspective"
         draggable
         hasDots
@@ -54,7 +53,6 @@ function PerspectiveViewGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="simple-glider"
   className="glider-container"
   draggable
   hasDots

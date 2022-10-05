@@ -6,7 +6,6 @@ function MultipleItemsGlider() {
   return (
     <div className="container">
       <Glider
-        id="multiple-glider"
         className="glider-container"
         draggable
         hasArrows
@@ -54,7 +53,6 @@ function MultipleItemsGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="multiple-glider"
   className="glider-container"
   draggable
   hasArrows

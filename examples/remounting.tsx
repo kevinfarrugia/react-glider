@@ -17,7 +17,6 @@ function RemountingGlider() {
       </button>
       {isVisible ? (
         <Glider
-          id="remounting-glider"
           className="glider-container"
           draggable
           hasDots
@@ -66,7 +65,6 @@ function RemountingGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  id="perspective-glider"
   className="glider-perspective"
   draggable
   hasDots
