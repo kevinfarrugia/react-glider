@@ -1,0 +1,47 @@
+.glider-prev,
+.glider-next {
+  width: 51px;
+  top: 37%;
+}
+
+.glider-prev {
+  left: -42px;
+}
+
+.glider-next {
+  right: -45px;
+}
+
+.glider {
+  height: 300px;
+}
+.glider-contain {
+  margin-bottom: 25px;
+}
+.glider-dots {
+  margin-top: 15px;
+}
+.glider-track {
+  height: 100%;
+}
+.gradient-outline {
+  border: 3px solid !important;
+  border-image: linear-gradient(to right, #8cc9f0, #efa8b0, #a89cc8) 5 !important;
+}
+.glider-slide {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f5f5f5;
+}
+.glider-slide h1 {
+  color: #8cc9f0;
+  font-weight: bold;
+}
+.glider-slide:nth-child(2n) h1 {
+  color: #a89cc8;
+}
+.glider-slide:nth-child(3n) h1 {
+  color: #efa8b0;
+}
