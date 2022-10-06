@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import * as React from "react";
 import Glider from "glider-js";
 import { GliderProps, GliderMethods, MakeGliderProps } from "./types";
