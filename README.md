@@ -231,7 +231,7 @@ The CSS for the [perspective view](https://kevinfarrugia.github.io/react-glider/
 
 ### Examples
 
-You may view the examples used in the _docs_ page in the [./examples](https://github.com/kevinfarrugia/react-glider/blob/master/docs) directory.
+You may view the examples used in the _docs_ page in the [./examples](https://github.com/kevinfarrugia/react-glider/blob/master/examples) directory.
 
 ## FAQs
 
