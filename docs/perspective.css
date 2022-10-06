@@ -1,0 +1,87 @@
+/* styles for perspective demo */
+
+.glider-perspective .glider-track {
+  position: relative;
+  align-items: center;
+}
+
+.glider-perspective .slide-outer {
+  padding: 0 10px;
+}
+
+.slide-outer > span {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  background: white;
+  border: 1px solid #cacaca;
+  color: #8cc9f0;
+  font-weight: bold;
+  font-size: 3em;
+  justify-content: center;
+}
+
+.slide-outer:nth-child(2n) > span {
+  color: #a89cc8;
+}
+
+.slide-outer:nth-child(3n) > span {
+  color: #efa8b0;
+}
+
+.glider-perspective .glider-slide {
+  height: 150px !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: perspective(1000px) rotateY(0deg) scale(1) translateZ(0);
+  transform-origin: 0 0;
+  transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glider-perspective .glider-slide.right-3 {
+  -webkit-transform: perspective(1000px) rotateY(-50deg) scale(1.45)
+    translateZ(0);
+  -webkit-transform-origin: 100% 50% 0;
+  transform: perspective(1000px) rotateY(-50deg) scale(1.45) translateZ(0);
+  transform-origin: 0% 50% 0;
+}
+
+.glider-perspective .glider-slide.left-3 {
+  -webkit-transform: perspective(1000px) rotateY(50deg) scale(1.45)
+    translateZ(0);
+  -webkit-transform-origin: 100% 50% 0;
+  transform: perspective(1000px) rotateY(50deg) scale(1.45) translateZ(0);
+  transform-origin: 0% 50% 0;
+}
+
+.glider-perspective .glider-slide.left-2 {
+  -webkit-transform: perspective(1000px) rotateY(50deg) scale(1.25) translateZ(0);
+  -webkit-transform-origin: 100% 50% 0;
+  transform: perspective(1000px) rotateY(50deg) scale(1.25) translateZ(0);
+  transform-origin: 100% 50% 0;
+}
+
+.glider-perspective .glider-slide.right-2 {
+  -webkit-transform: perspective(1000px) rotateY(-50deg) scale(1.25)
+    translateZ(0);
+  -webkit-transform-origin: 0 50% 0;
+  transform: perspective(1000px) rotateY(-50deg) scale(1.25) translateZ(0);
+  transform-origin: 0 50% 0;
+}
+
+.glider-perspective .glider-slide.left-1 {
+  -webkit-transform: perspective(1000px) rotateY(34deg) scale(1.1) translateZ(0);
+  -webkit-transform-origin: 100% 50% 0;
+  transform: perspective(1000px) rotateY(34deg) scale(1.1) translateZ(0);
+  transform-origin: 100% 50% 0;
+}
+
+.glider-perspective .glider-slide.right-1 {
+  -webkit-transform: perspective(1000px) rotateY(-34deg) scale(1.1)
+    translateZ(0);
+  -webkit-transform-origin: 0 50% 0;
+  transform: perspective(1000px) rotateY(-34deg) scale(1.1) translateZ(0);
+  transform-origin: 0 50% 0;
+}
