@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 import * as React from "react";
 import Glider from "glider-js";
-import { GliderProps, GliderMethods } from "./types";
+import { GliderProps, GliderMethods, MakeGliderProps } from "./types";
 
 const makeGliderOptions: (
-  props: GliderProps & {
+  props: MakeGliderProps & {
     nextButtonEl: HTMLElement | null;
     prevButtonEl: HTMLElement | null;
     dotsEl: HTMLElement | null;
@@ -64,14 +65,12 @@ const GliderComponent = React.forwardRef(
     // initialize the glider
     const callbackRef = React.useCallback(
       (element: HTMLDivElement) => {
-        // eslint-disable-next-line no-console
-        console.log("A");
         elementRef.current = element;
         if (element && !gliderRef.current) {
           const glider = new Glider(
             element,
             makeGliderOptions({
-              ...restProps, // TODO: we don't like restProps
+              ...restProps,
               arrows,
               hasArrows,
               dots,
@@ -79,7 +78,6 @@ const GliderComponent = React.forwardRef(
               nextButtonEl: nextButtonRef.current,
               prevButtonEl: prevButtonRef.current,
               dotsEl: dotsRef.current,
-              children: null, // TODO: we need to use a diff type to avoid children: null
             })
           ) as GliderMethods;
 
@@ -140,12 +138,10 @@ const GliderComponent = React.forwardRef(
 
     // when the props update, sync the glider
     React.useEffect(() => {
-      // eslint-disable-next-line no-console
-      console.log("B");
       if (gliderRef.current) {
         gliderRef.current.setOption(
           makeGliderOptions({
-            ...restProps, // TODO: we don't like restProps
+            ...restProps,
             arrows,
             hasArrows,
             dots,
@@ -153,7 +149,6 @@ const GliderComponent = React.forwardRef(
             nextButtonEl: nextButtonRef.current,
             prevButtonEl: prevButtonRef.current,
             dotsEl: dotsRef.current,
-            children: null,
           }),
           true
         );
@@ -163,8 +158,6 @@ const GliderComponent = React.forwardRef(
 
     // when the event listeners change, sync the glider
     React.useEffect(() => {
-      // eslint-disable-next-line no-console
-      console.log("C");
       if (elementRef.current) {
         const addEventListener = (
           event: string,
@@ -184,8 +177,6 @@ const GliderComponent = React.forwardRef(
         addEventListener("glider-slide-hidden", onSlideHidden);
       }
       return () => {
-        // eslint-disable-next-line no-console
-        console.log("D");
         const removeEventListener = (
           event: string,
           fn: ((e: CustomEvent) => void) | undefined

@@ -1,3 +1,5 @@
+import Glider from "glider-js";
+
 export interface BreakPoint {
   breakpoint: number;
   settings: {
@@ -85,12 +87,6 @@ export interface GliderProps {
    *  @default false
    */
   scrollPropagate?: boolean;
-  /**
-   * Whether or not Glider.js events should bubble (useful for binding events to all carousels)
-   *
-   * @default true
-   */
-  propagateEvent?: boolean;
 
   /**
    * If true, Glider.js will scroll to the nearest slide after any scroll interactions.
@@ -174,4 +170,9 @@ export interface GliderMethods {
   setOption(options: GliderOptions, global?: boolean): void;
   scrollTo(pixelOffset: number): void;
   scrollItem(slideIndex: string | number, isActuallyDotIndex?: boolean): void;
+}
+
+export interface MakeGliderProps extends Glider.Options {
+  hasDots?: boolean;
+  hasArrows?: boolean;
 }
