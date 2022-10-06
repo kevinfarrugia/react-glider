@@ -30,7 +30,7 @@
     "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
     "lint": "npm run lint-js",
     "prepare": "husky install",
-    "prerelease": "npm run build"
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
