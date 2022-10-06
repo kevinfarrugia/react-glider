@@ -18,7 +18,13 @@ function Demos() {
   return (
     <div className="demos">
       <h2>Demos</h2>
+
       <div className="item">
+        <h3>Unmounting / remounting</h3>
+        <RemountingGlider />
+      </div>
+
+      {/* <div className="item">
         <h3>Multiple Items</h3>
         <MultipleItemsGlider />
       </div>
@@ -49,7 +55,7 @@ function Demos() {
         <PerspectiveViewGlider />
       </div>
       <div className="item">
-        <h3>Scroll to slide</h3>
+        <h3>Scroll to slide #5</h3>
         <ScrollToGlider />
       </div>
       <div className="item">
@@ -71,7 +77,7 @@ function Demos() {
       <div className="item">
         <h3>Skip Track</h3>
         <SkipTrackGlider />
-      </div>
+      </div> */}
     </div>
   );
 }

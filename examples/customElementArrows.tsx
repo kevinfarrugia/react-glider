@@ -3,17 +3,23 @@ import * as React from "react";
 import Glider from "../src";
 
 function CustomElementArrowsGlider() {
-  const leftArrowEl = React.useRef<HTMLButtonElement>(null);
-  const rightArrowEl = React.useRef<HTMLButtonElement>(null);
-  const [isInitialized, setIsInitialized] = React.useState(false);
+  const leftArrowEl = React.useRef<HTMLElement | null>(null);
+  const rightArrowEl = React.useRef<HTMLElement | null>(null);
+  const [isReady, setIsReady] = React.useState(false);
 
-  React.useEffect(() => {
-    setIsInitialized(Boolean(leftArrowEl.current && rightArrowEl.current));
-  }, [leftArrowEl, rightArrowEl]);
+  const leftArrowCallbackRef = React.useCallback((element) => {
+    leftArrowEl.current = element;
+    setIsReady(Boolean(leftArrowEl.current && rightArrowEl.current));
+  }, []);
+
+  const rightArrowCallbackRef = React.useCallback((element) => {
+    rightArrowEl.current = element;
+    setIsReady(Boolean(leftArrowEl.current && rightArrowEl.current));
+  }, []);
 
   return (
     <div className="container">
-      {isInitialized && (
+      {isReady && (
         <Glider
           className="glider-container"
           draggable
@@ -66,7 +72,7 @@ function CustomElementArrowsGlider() {
       )}
       <div>
         <button
-          ref={leftArrowEl}
+          ref={leftArrowCallbackRef}
           type="button"
           aria-label="Previous"
           className="custom-arrow"
@@ -79,7 +85,7 @@ function CustomElementArrowsGlider() {
           </svg>
         </button>
         <button
-          ref={rightArrowEl}
+          ref={rightArrowCallbackRef}
           type="button"
           aria-label="Next"
           className="custom-arrow"

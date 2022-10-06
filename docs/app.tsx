@@ -3,9 +3,11 @@ import Demos from "./demos";
 
 function App() {
   return (
-    <div className="app">
-      <Demos />
-    </div>
+    <React.StrictMode>
+      <div className="app">
+        <Demos />
+      </div>
+    </React.StrictMode>
   );
 }
 
