@@ -19,6 +19,7 @@ const makeGliderOptions: (
   ...restProps
 }) => ({
   ...restProps,
+  skipTrack: true,
   arrows:
     (hasArrows && {
       next: (arrows && arrows.next) || nextButtonEl,
@@ -42,6 +43,7 @@ const GliderComponent = React.forwardRef(
       scrollToPage,
       iconLeft,
       iconRight,
+      skipTrack,
       children,
       onLoad,
       onSlideVisible,
@@ -222,7 +224,7 @@ const GliderComponent = React.forwardRef(
         )}
 
         <div id={id || autoId} className={className} ref={callbackRef}>
-          {children}
+          {skipTrack ? children : <div>{children}</div>}
         </div>
 
         {hasDots && !dots && <div ref={dotsRef} />}
