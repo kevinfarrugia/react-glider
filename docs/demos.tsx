@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import DynamicDataGlider from "../examples/dynamicDataGlider";
 import SingleItemGlider from "../examples/singleItemGlider";
 import MultipleItemsGlider from "../examples/multipleItemsGlider";
 import ResponsiveGlider from "../examples/responsiveGlider";
@@ -71,6 +72,10 @@ function Demos() {
       <div className="item">
         <h3>Skip Track</h3>
         <SkipTrackGlider />
+      </div>
+      <div className="item">
+        <h3>Dynamic Data</h3>
+        <DynamicDataGlider />
       </div>
     </div>
   );
