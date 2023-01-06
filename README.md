@@ -9,7 +9,7 @@ A [ReactJS](https://reactjs.org/) wrapper for [Glider.js](https://github.com/Nic
 ### Installation:
 
 ```sh
-npm -i -s react-glider
+npm i -s react-glider
 ```
 
 ### Usage
