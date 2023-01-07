@@ -1,3 +1,5 @@
+[![build](https://github.com/kevinfarrugia/react-glider/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/kevinfarrugia/react-glider/actions/workflows/pages/pages-build-deployment)
+
 # react-glider
 
 A [ReactJS](https://reactjs.org/) wrapper for [Glider.js](https://github.com/NickPiscitelli/Glider.js/).
