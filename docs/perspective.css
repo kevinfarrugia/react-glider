@@ -21,6 +21,13 @@
   justify-content: center;
 }
 
+@media screen and (prefers-color-scheme: dark) {
+  .slide-outer > span {
+    background: #333;
+    border: 1px solid #4a4a5a;
+  }
+}
+
 .slide-outer:nth-child(2n) > span {
   color: #a89cc8;
 }

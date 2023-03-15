@@ -17,7 +17,7 @@ body {
 
 a,
 a:visited {
-  color: #fff;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -35,16 +35,29 @@ footer {
 
 .hero {
   padding: 2em;
-  background-image: linear-gradient(to right, #51089f 0%,#7f1cc5 30%, #cd88e5 100%);
+  background-image: linear-gradient(
+    to right,
+    #51089f 0%,
+    #7f1cc5 30%,
+    #cd88e5 100%
+  );
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.5em;
   text-align: center;
 }
 
 .content {
+  padding: 1em 0;
   background-color: #fff;
   color: rgba(0, 0, 0, 0.75);
   text-align: center;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .content {
+    background-color: #32333f;
+    color: rgba(255, 255, 255, 0.75);
+  }
 }
 
 pre {
@@ -85,9 +98,20 @@ summary {
 
 .app {
   padding: 1em 0;
-  background-image: linear-gradient(to right, #51089f 0%,#7f1cc5 30%, #cd88e5 100%);
+  background-image: linear-gradient(
+    to right,
+    #51089f 0%,
+    #7f1cc5 30%,
+    #cd88e5 100%
+  );
   color: rgba(0, 0, 0, 0.75);
   text-align: center;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .demos {
+    color: rgba(255, 255, 255, 0.75);
+  }
 }
 
 .container {
@@ -104,6 +128,12 @@ summary {
   overflow: hidden;
 }
 
+@media screen and (prefers-color-scheme: dark) {
+  .demos {
+    background-color: #32333f;
+  }
+}
+
 .item {
   margin-top: 2em;
   border-top: 1px solid #f0f0f0;
@@ -111,4 +141,38 @@ summary {
 
 .item:first-child {
   border-top: 0;
+}
+
+.anchor {
+  color: #000;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .anchor {
+    color: #fafafa;
+  }
+}
+
+.anchor::before {
+  color: rgba(0, 0, 0, 0.75);
+  content: "#";
+  display: none;
+  margin-left: -0.75em;
+  position: absolute;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .anchor::before {
+    color: hsla(0, 0%, 100%, 0.75);
+  }
+}
+
+.anchor:hover::before {
+  display: inline;
+}
+
+@media (hover: none) {
+  .anchor:hover::before {
+    visibility: hidden;
+  }
 }
