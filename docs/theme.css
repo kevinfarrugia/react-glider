@@ -50,6 +50,13 @@
   border: 1px solid #cacaca;
 }
 
+@media screen and (prefers-color-scheme: dark) {
+  .slide {
+    background: #333;
+    border: 1px solid #4a4a5a;
+  }
+}
+
 .slide > span {
   color: #8cc9f0;
   font-weight: bold;
