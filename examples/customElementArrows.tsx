@@ -21,11 +21,10 @@ function CustomElementArrowsGlider() {
     <div className="container">
       {isReady && (
         <Glider
-          className="glider-container"
+          className="glider-container glider-scroll-lock"
           draggable
           hasDots
           slidesToShow={1}
-          scrollLock
           hasArrows
           arrows={{
             prev: leftArrowEl.current,
@@ -102,11 +101,10 @@ function CustomElementArrowsGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  className="glider-container"
+  className="glider-container glider-scroll-lock"
   draggable
   hasDots
   slidesToShow={1}
-  scrollLock
   hasArrows
   arrows={{
     prev: leftArrowEl.current,
