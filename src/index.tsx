@@ -55,7 +55,7 @@ const GliderComponent = React.forwardRef(
       onSlideHidden,
       ...restProps
     } = props;
-    const autoId = React.useId();
+    const autoId = Math.random().toString(36).replace(/[^a-z]+/g, '');
 
     const prevButtonRef = React.useRef<HTMLButtonElement>(null);
     const nextButtonRef = React.useRef<HTMLButtonElement>(null);
