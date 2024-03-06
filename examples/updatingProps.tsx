@@ -18,11 +18,10 @@ function UpdatingPropsGlider() {
         <option>4</option>
       </select>
       <Glider
-        className="glider-container"
+        className="glider-container glider-scroll-lock"
         draggable
         hasDots
         slidesToShow={slidesToShow}
-        scrollLock
       >
         <div className="slide">
           <span>1</span>
@@ -65,11 +64,10 @@ function UpdatingPropsGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  className="glider-container"
+  className="glider-container glider-scroll-lock"
   draggable
   hasDots
   slidesToShow={slidesToShow}
-  scrollLock
 >`}</code>
         </pre>
       </details>
