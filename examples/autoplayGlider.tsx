@@ -38,11 +38,10 @@ function AutoplayGlider() {
   return (
     <div className="container">
       <Glider
-        className="glider-container"
+        className="glider-container glider-scroll-lock"
         draggable
         hasDots
         slidesToShow={1}
-        scrollLock
         ref={callbackRef}
       >
         <div className="slide">
@@ -114,11 +113,10 @@ React.useEffect(
 
 return (
   <Glider
-    className="glider-container"
+    className="glider-container glider-scroll-lock"
     draggable
     hasDots
     slidesToShow={1}
-    scrollLock
     ref={callbackRef}
   >
     <div>
