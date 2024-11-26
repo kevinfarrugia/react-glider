@@ -17,11 +17,10 @@ function RemountingGlider() {
       </button>
       {isVisible ? (
         <Glider
-          className="glider-container"
+          className="glider-container glider-scroll-lock"
           draggable
           hasDots
           slidesToShow={1}
-          scrollLock
         >
           <div className="slide">
             <span>1</span>
@@ -65,11 +64,10 @@ function RemountingGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  className="glider-perspective"
+  className="glider-container glider-scroll-lock"
   draggable
   hasDots
-  slidesToShow={5}
-  slidesToScroll={1}
+  slidesToShow={1}
 >`}</code>
         </pre>
       </details>
