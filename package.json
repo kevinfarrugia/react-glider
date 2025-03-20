@@ -40,6 +40,7 @@
     "@types/glider-js": "^1.7.6",
     "@types/jest": "^29.1.2",
     "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "babel-core": "^6.26.3",
