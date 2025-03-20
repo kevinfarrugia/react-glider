@@ -1,4 +1,12 @@
-import * as React from "react";
+import {
+  forwardRef,
+  Ref,
+  useCallback,
+  useEffect,
+  useId,
+  useImperativeHandle,
+  useRef,
+} from "react";
 import Glider from "glider-js";
 import { GliderProps, GliderMethods, MakeGliderProps } from "./types";
 
@@ -29,8 +37,8 @@ const makeGliderOptions: (
   dots: (hasDots && dots) || dotsEl || undefined,
 });
 
-const GliderComponent = React.forwardRef(
-  (props: GliderProps, ref: React.Ref<GliderMethods>) => {
+const GliderComponent = forwardRef(
+  (props: GliderProps, ref: Ref<GliderMethods>) => {
     const {
       id,
       containerElement,
@@ -55,16 +63,16 @@ const GliderComponent = React.forwardRef(
       onSlideHidden,
       ...restProps
     } = props;
-    const autoId = React.useId();
+    const autoId = useId();
 
-    const prevButtonRef = React.useRef<HTMLButtonElement>(null);
-    const nextButtonRef = React.useRef<HTMLButtonElement>(null);
-    const dotsRef = React.useRef<HTMLDivElement>(null);
-    const elementRef = React.useRef<HTMLDivElement | null>(null);
-    const gliderRef = React.useRef<GliderMethods | null>(null);
+    const prevButtonRef = useRef<HTMLButtonElement>(null);
+    const nextButtonRef = useRef<HTMLButtonElement>(null);
+    const dotsRef = useRef<HTMLDivElement>(null);
+    const elementRef = useRef<HTMLDivElement | null>(null);
+    const gliderRef = useRef<GliderMethods | null>(null);
 
     // initialize the glider
-    const callbackRef = React.useCallback(
+    const callbackRef = useCallback(
       (element: HTMLDivElement) => {
         elementRef.current = element;
         if (element && !gliderRef.current) {
@@ -138,7 +146,7 @@ const GliderComponent = React.forwardRef(
     );
 
     // when the props update, sync the glider
-    React.useEffect(() => {
+    useEffect(() => {
       if (gliderRef.current) {
         gliderRef.current.setOption(
           makeGliderOptions({
@@ -158,7 +166,7 @@ const GliderComponent = React.forwardRef(
     }, [arrows, dots, hasArrows, hasDots, restProps]);
 
     // when the event listeners change, sync the glider
-    React.useEffect(() => {
+    useEffect(() => {
       if (elementRef.current) {
         const addEventListener = (
           event: string,
@@ -206,7 +214,7 @@ const GliderComponent = React.forwardRef(
     ]);
 
     // expose the glider instance to the user so they can call the methods too
-    React.useImperativeHandle(ref, () => gliderRef.current as GliderMethods);
+    useImperativeHandle(ref, () => gliderRef.current as GliderMethods);
 
     const Element = containerElement || "div";
 

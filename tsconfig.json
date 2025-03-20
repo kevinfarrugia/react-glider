@@ -7,7 +7,7 @@
     "declaration": true,
     "sourceMap": true,
     "allowJs": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "rootDirs": ["src", "stories"],
