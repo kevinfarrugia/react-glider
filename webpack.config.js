@@ -31,7 +31,10 @@ module.exports = {
                   targets: { browsers: ["defaults"] },
                 },
               ],
-              ["@babel/preset-react", { development: true }],
+              [
+                "@babel/preset-react",
+                { runtime: "automatic", development: true },
+              ],
               ["@babel/preset-typescript"],
             ],
           },

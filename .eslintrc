@@ -3,7 +3,8 @@
     "airbnb",
     "prettier",
     "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime"
   ],
   "globals": { "document": true, "window": true, "Glider": true },
   "parser": "@typescript-eslint/parser",

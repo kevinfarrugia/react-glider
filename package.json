@@ -39,7 +39,7 @@
     "@babel/preset-typescript": "^7.18.6",
     "@types/glider-js": "^1.7.6",
     "@types/jest": "^29.1.2",
-    "@types/react": "^18.0.21",
+    "@types/react": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "babel-core": "^6.26.3",
@@ -61,8 +61,8 @@
     "lint-staged": "^13.0.3",
     "mkdirp": "^1.0.4",
     "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "style-loader": "^3.3.1",
     "ts-jest": "^29.0.3",
     "typescript": "^4.8.4",
@@ -71,11 +71,12 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@types/react-dom": "^19.0.0",
     "glider-js": "^1.7.7"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "husky": {
     "hooks": {

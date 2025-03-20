@@ -1,4 +1,5 @@
 import Glider from "glider-js";
+import { ElementType, ReactNode, Ref } from "react";
 
 export interface BreakPoint {
   breakpoint: number;
@@ -11,13 +12,15 @@ export interface BreakPoint {
 }
 
 export interface GliderProps {
+  // eslint-disable-next-line no-use-before-define
+  ref?: Ref<GliderMethods>;
   id?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   hasArrows?: boolean;
   hasDots?: boolean;
   className?: string;
-  iconLeft?: React.ReactNode;
-  iconRight?: React.ReactNode;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
   scrollToSlide?: number;
   scrollToPage?: number;
 
@@ -120,7 +123,7 @@ export interface GliderProps {
   /**
    * Replace container html element
    */
-  containerElement?: React.ElementType;
+  containerElement?: ElementType;
 
   /** use any custom easing function, compatible with most easing plugins */
   easing?(x: number, t: number, b: number, c: number, d: number): number;

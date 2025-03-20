@@ -1,9 +1,8 @@
-import * as React from "react";
-
+import { useState } from "react";
 import Glider from "../src";
 
 function RemountingGlider() {
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className="container">
