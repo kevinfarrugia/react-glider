@@ -25,6 +25,6 @@
       { "name": "typescript-tslint-plugin", "configFile": "./tslint.json" }
     ]
   },
-  "include": ["src/**/*", "examples/**/*", "docs/**/*", "types/**/*"],
+  "include": ["src/**/*", "examples/**/*", "docs/**/*", "types/**/*", "tests/**/*"],
   "exclude": ["node_modules", "build", "scripts"]
 }
