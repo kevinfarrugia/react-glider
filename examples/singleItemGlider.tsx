@@ -4,11 +4,10 @@ function SingleItemGlider() {
   return (
     <div className="container">
       <Glider
-        className="glider-container"
+        className="glider-container glider-scroll-lock"
         draggable
         hasDots
         slidesToShow={1}
-        scrollLock
       >
         <div className="slide">
           <span>1</span>
@@ -51,11 +50,10 @@ function SingleItemGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  className="glider-container"
+  className="glider-container glider-scroll-lock"
   draggable
   hasDots
   slidesToShow={1}
-  scrollLock
 >
   <div>
     <span>1</span>

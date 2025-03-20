@@ -87,9 +87,9 @@ import Glider from "react-glider/glider.defaults.css";
 | dragVelocity     | How much to aggravate the velocity of the mouse dragging. (default = 3.3)                                                                                                                                                                                   |
 | scrollPropagate  | Whether or not to release the scroll events from the container. (default = true)                                                                                                                                                                            |
 | propagateEvent   | Whether or not Glider.js events should bubble (useful for binding events to all carousels). (default = false)                                                                                                                                               |
-| scrollLock       | If true, Glider.js will scroll to the nearest slide after any scroll interactions. (default = false)                                                                                                                                                        |
+| scrollLock       | **Deprecated: Use `glider-scroll-lock` CSS class or `scroll-snap-type` CSS property** If true, Glider.js will scroll to the nearest slide after any scroll interactions. (default = false)                                                                                                                                                        |
+| scrollLockDelay  | **Deprecated: See `scrollLock`.** How long (ms) to wait after scroll event before locking, if too low, it might interrupt normal scrolling. (default = 250)                                                                                                                                   |
 | skipTrack        | Whether or not Glider.js should skip wrapping its children with a 'glider-track' `<div>`. NOTE: If true, Glider.js will assume that the 'glider-track' element has been added manually. All slides must be children of the track element. (default = false) |
-| scrollLockDelay  | How long (ms) to wait after scroll event before locking, if too low, it might interrupt normal scrolling. (default = 250)                                                                                                                                   |
 | responsive       | An object containing custom settings per provided breakpoint. Glider.js breakpoints are mobile-first, be conscious of your ordering. Supported responsive settings are `slidesToShow`, `slidesToScroll`, `itemWidth`, and `duration`.                       |
 | containerElement | Replace container HTML element.                                                                                                                                                                                                                             |
 | easing           | Use any custom easing function, compatible with most easing plugins.                                                                                                                                                                                        |
@@ -142,7 +142,6 @@ You can set different settings for different viewport widths.
 ```jsx
 <Glider
   slidesToShow={1}
-  scrollLock
   responsive={[
     {
       breakpoint: 864,
@@ -209,11 +208,10 @@ function Example() {
         Scroll to random item
       </button>
       <Glider
-        className="glider-container"
+        className="glider-container scroll-lock"
         draggable
         hasDots
         slidesToShow={1}
-        scrollLock
         ref={gliderRef}
       >
         <div>
