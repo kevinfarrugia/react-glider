@@ -3647,10 +3647,10 @@ get-symbol-description@^1.0.0:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
-glider-js@^1.7.7:
-  version "1.7.7"
-  resolved "https://registry.yarnpkg.com/glider-js/-/glider-js-1.7.7.tgz#24508efecf6f20fd32b08b2940e4762e1c35fa23"
-  integrity sha512-jowNSpd/38EG0Kw83NgTo4F9YSAcpWQxBw0SFZcc2FysZD+dUuW/AcSeFU27rwGJilqdocKbw12IHOKi+DtpZw==
+glider-js@^1.7.9:
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/glider-js/-/glider-js-1.7.9.tgz#a5b6adcc6ba4919c734207a81ed9deb4db2209eb"
+  integrity sha512-22r7EZ8cd4HWsM+pvNResu1h9tvJmAlrMBO2CbdJ9mhsYF/UllJEdvq8OuJDBgYcD0aja51vzRb/TbT7BCAaig==
 
 glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"

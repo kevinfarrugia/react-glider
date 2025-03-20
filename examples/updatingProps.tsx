@@ -19,6 +19,7 @@ function UpdatingPropsGlider() {
       </select>
       <Glider
         className="glider-container"
+        passiveListeners
         draggable
         hasDots
         slidesToShow={slidesToShow}

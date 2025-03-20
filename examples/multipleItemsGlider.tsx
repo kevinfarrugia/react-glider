@@ -7,6 +7,7 @@ function MultipleItemsGlider() {
     <div className="container">
       <Glider
         className="glider-container"
+        passiveListeners
         draggable
         hasArrows
         hasDots
