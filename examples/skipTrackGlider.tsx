@@ -7,6 +7,7 @@ function SkipTrackGlider() {
     <div className="container">
       <Glider
         className="glider-container"
+        passiveListeners
         draggable
         hasDots
         slidesToShow={3}

@@ -122,6 +122,11 @@ export interface GliderProps {
    */
   containerElement?: React.ElementType;
 
+  /**
+   * Use passive event listeners
+   */
+  passiveListeners?: boolean;
+
   /** use any custom easing function, compatible with most easing plugins */
   easing?(x: number, t: number, b: number, c: number, d: number): number;
 

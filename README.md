@@ -95,6 +95,7 @@ import Glider from "react-glider/glider.defaults.css";
 | responsive       | An object containing custom settings per provided breakpoint. Glider.js breakpoints are mobile-first, be conscious of your ordering. Supported responsive settings are `slidesToShow`, `slidesToScroll`, `itemWidth`, and `duration`.                       |
 | containerElement | Replace container HTML element.                                                                                                                                                                                                                             |
 | easing           | Use any custom easing function, compatible with most easing plugins.                                                                                                                                                                                        |
+| passiveListeners | If true, the component will use passive event listeners. (default = false)                                                                                                                                                                                                    |
 
 ### Arrows
 
@@ -212,6 +213,7 @@ function Example() {
       </button>
       <Glider
         className="glider-container"
+        passiveListeners
         draggable
         hasDots
         slidesToShow={1}

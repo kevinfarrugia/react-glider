@@ -7,6 +7,7 @@ function ResponsiveGlider() {
     <div className="container">
       <Glider
         className="glider-container"
+        passiveListeners
         hasArrows
         hasDots
         slidesToShow={1}
