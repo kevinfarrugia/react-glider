@@ -1,10 +1,9 @@
-import * as React from "react";
-
+import { useRef } from "react";
 import Glider from "../src";
 import { GliderMethods } from "../src/types";
 
 function RefGlider() {
-  const gliderRef = React.useRef<GliderMethods>(null);
+  const gliderRef = useRef<GliderMethods>(null);
   return (
     <div className="container">
       <button
@@ -64,7 +63,7 @@ function RefGlider() {
       <details>
         <summary>View Source Code</summary>
         <pre>
-          <code>{`const gliderRef = React.useRef<GliderMethods>(null);
+          <code>{`const gliderRef = useRef<GliderMethods>(null);
 
 return (
   <button

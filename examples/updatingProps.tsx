@@ -1,9 +1,8 @@
-import * as React from "react";
-
+import { useState } from "react";
 import Glider from "../src";
 
 function UpdatingPropsGlider() {
-  const [slidesToShow, setSlidesToShow] = React.useState(1);
+  const [slidesToShow, setSlidesToShow] = useState(1);
 
   return (
     <div className="container">

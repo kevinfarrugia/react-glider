@@ -1,9 +1,8 @@
-import * as React from "react";
-
+import { useState } from "react";
 import Glider from "../src";
 
 function DynamicDataGlider() {
-  const [data, setData] = React.useState([1, 2, 3, 4, 5, 6]);
+  const [data, setData] = useState([1, 2, 3, 4, 5, 6]);
 
   return (
     <div className="container">

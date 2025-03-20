@@ -126,7 +126,7 @@ arrows={{
 }}
 ```
 
-When using `React.useRef`:
+When using `useRef`:
 
 ```jsx
 arrows={{
@@ -135,7 +135,7 @@ arrows={{
 }}
 ```
 
-_Note that `React.useRef` will assign a value to `current` after the component has rendered. This means that on the first render, `current` is null._
+_Note that `useRef` will assign a value to `current` after the component has rendered. This means that on the first render, `current` is null._
 
 ### Responsive mode
 
@@ -198,7 +198,7 @@ To get access to the current glider instance this react component exposes a ref.
 
 ```tsx
 function Example() {
-  const gliderRef = React.useRef<GliderMethods>(null);
+  const gliderRef = useRef<GliderMethods>(null);
   return (
     <div>
       <button

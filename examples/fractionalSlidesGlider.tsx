@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import Glider from "../src";
 
 function FractionalSlidesGlider() {

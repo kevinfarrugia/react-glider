@@ -1,13 +1,13 @@
-import * as React from "react";
+import { StrictMode } from "react";
 import Demos from "./demos";
 
 function App() {
   return (
-    <React.StrictMode>
+    <StrictMode>
       <div className="app">
         <Demos />
       </div>
-    </React.StrictMode>
+    </StrictMode>
   );
 }
 

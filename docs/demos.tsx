@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import DynamicDataGlider from "../examples/dynamicDataGlider";
 import SingleItemGlider from "../examples/singleItemGlider";
 import MultipleItemsGlider from "../examples/multipleItemsGlider";

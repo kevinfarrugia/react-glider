@@ -1,5 +1,5 @@
+import { useCallback, useEffect, useRef } from "react";
 import GliderType from "glider-js";
-import * as React from "react";
 
 import Glider from "../src";
 
@@ -7,9 +7,9 @@ function AutoplayGlider() {
   const INTERVAL = 5000;
   const MAX = 11;
 
-  const intervalRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const callbackRef = React.useCallback((glider: GliderType) => {
+  const callbackRef = useCallback((glider: GliderType) => {
     if (glider) {
       if (!intervalRef.current) {
         intervalRef.current = setInterval(() => {
@@ -25,7 +25,7 @@ function AutoplayGlider() {
     }
   }, []);
 
-  React.useEffect(
+  useEffect(
     () => () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -85,9 +85,9 @@ function AutoplayGlider() {
       <details>
         <summary>View Source Code</summary>
         <pre>
-          <code>{`const intervalRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+          <code>{`const intervalRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-const callbackRef = React.useCallback((glider: GliderType) => {
+const callbackRef = useCallback((glider: GliderType) => {
   if (glider) {
     if (!intervalRef.current) {
       intervalRef.current = setInterval(() => {
@@ -103,7 +103,7 @@ const callbackRef = React.useCallback((glider: GliderType) => {
   }
 }, []);
 
-React.useEffect(
+useEffect(
   () => () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);

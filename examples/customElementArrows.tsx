@@ -1,18 +1,17 @@
-import * as React from "react";
-
+import { useCallback, useRef, useState } from "react";
 import Glider from "../src";
 
 function CustomElementArrowsGlider() {
-  const leftArrowEl = React.useRef<HTMLElement | null>(null);
-  const rightArrowEl = React.useRef<HTMLElement | null>(null);
-  const [isReady, setIsReady] = React.useState(false);
+  const leftArrowEl = useRef<HTMLElement | null>(null);
+  const rightArrowEl = useRef<HTMLElement | null>(null);
+  const [isReady, setIsReady] = useState(false);
 
-  const leftArrowCallbackRef = React.useCallback((element) => {
+  const leftArrowCallbackRef = useCallback((element: HTMLElement | null) => {
     leftArrowEl.current = element;
     setIsReady(Boolean(leftArrowEl.current && rightArrowEl.current));
   }, []);
 
-  const rightArrowCallbackRef = React.useCallback((element) => {
+  const rightArrowCallbackRef = useCallback((element: HTMLElement | null) => {
     rightArrowEl.current = element;
     setIsReady(Boolean(leftArrowEl.current && rightArrowEl.current));
   }, []);
