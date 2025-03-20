@@ -1,5 +1,5 @@
 import Glider from "glider-js";
-import { ElementType, ReactNode } from "react";
+import { ElementType, ReactNode, Ref } from "react";
 
 export interface BreakPoint {
   breakpoint: number;
@@ -12,6 +12,8 @@ export interface BreakPoint {
 }
 
 export interface GliderProps {
+  // eslint-disable-next-line no-use-before-define
+  ref?: Ref<GliderMethods>;
   id?: string;
   children: ReactNode;
   hasArrows?: boolean;
