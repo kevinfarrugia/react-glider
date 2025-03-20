@@ -1,7 +1,7 @@
 {
   "name": "react-glider",
   "description": "A ReactJS wrapper for glider.js",
-  "version": "4.0.2",
+  "version": "5.0.0",
   "private": false,
   "license": "MIT",
   "main": "dist/index.js",
