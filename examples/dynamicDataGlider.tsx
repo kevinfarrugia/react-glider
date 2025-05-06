@@ -18,9 +18,8 @@ function DynamicDataGlider() {
       />
       <div className="container">
         <Glider
-          className="glider-container"
+          className="glider-container glider-scroll-lock"
           slidesToShow={1}
-          scrollLock
           hasDots
           draggable
         >
