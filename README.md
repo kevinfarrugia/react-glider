@@ -183,7 +183,7 @@ function MyComponent() {
 | -------------- | ----------------------------------------------------------------------------- |
 | onLoad         | Called after Glider component is initialized.                                 |
 | onAnimated     | Called whenever a Glider.js paging animation is complete                      |
-| onRemove       | Called whenever a Glider.js animation is complete                             |
+| onRemove       | Called whenever an item is removed from Glider.js                             |
 | onSlideVisible | Called whenever a slide a shown. Passed an object containing the slide index  |
 | onRefresh      | Called whenever Glider.js refreshes it's elements or settings                 |
 | onAdd          | Called whenever an item is added to Glider.js                                 |
