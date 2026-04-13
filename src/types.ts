@@ -95,6 +95,7 @@ export interface GliderProps {
    * If true, Glider.js will scroll to the nearest slide after any scroll interactions.
    *
    * @default false
+   * @deprecated Use 'glider-scroll-lock' CSS class or 'scroll-snap-type' CSS property
    */
   scrollLock?: boolean;
 
@@ -110,6 +111,7 @@ export interface GliderProps {
    * if too low, it might interrupt normal scrolling
    *
    * @default 250
+   * @deprecated See scrollLock.
    */
   scrollLockDelay?: number;
 

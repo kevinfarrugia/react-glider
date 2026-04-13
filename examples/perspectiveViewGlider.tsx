@@ -51,11 +51,11 @@ function PerspectiveViewGlider() {
         <summary>View Source Code</summary>
         <pre>
           <code>{`<Glider
-  className="glider-container"
+  className="glider-perspective"
   draggable
   hasDots
-  slidesToShow={1}
-  scrollLock
+  slidesToShow={5}
+  slidesToScroll={1}
 >
   <div>
     <span>1</span>

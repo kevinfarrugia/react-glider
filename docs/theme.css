@@ -42,12 +42,21 @@
   margin: 1em 0;
 }
 
+.glider-scroll-lock {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0px;
+}
+
 .slide {
   background: white;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #cacaca;
+}
+
+.glider-scroll-lock .slide {
+  scroll-snap-align: start;
 }
 
 @media screen and (prefers-color-scheme: dark) {

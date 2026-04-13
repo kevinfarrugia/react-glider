@@ -16,11 +16,10 @@ function RefGlider() {
         Scroll to random item
       </button>
       <Glider
-        className="glider-container"
+        className="glider-container glider-scroll-lock"
         draggable
         hasDots
         slidesToShow={1}
-        scrollLock
         ref={gliderRef}
       >
         <div className="slide">
@@ -76,11 +75,10 @@ return (
     Scroll to random item
   </button>
   <Glider
-    className="glider-container"
+    className="glider-container glider-scroll-lock"
     draggable
     hasDots
     slidesToShow={1}
-    scrollLock
     ref={gliderRef}
   >
     <div>
